@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqu6s3isdg2c"]
+[gd_scene load_steps=6 format=3 uid="uid://cqu6s3isdg2c"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_j4fp5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpr26"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[ext_resource type="Texture2D" uid="uid://dco85331q5jd2" path="res://Assets/GameSprites/Parallaxes/StarlitSky.png" id="2_n701f"]
+[ext_resource type="Texture2D" uid="uid://03jthpunbh0" path="res://Assets/GameSprites/Titles2/Mountains.png" id="3_5wr7h"]
+[ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="4_vnjh4"]
+[ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="5_cej6g"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +16,15 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j4fp5")
+
+[node name="StarlitSky" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+scale = Vector2(2.11765, 1)
+texture = ExtResource("2_n701f")
+
+[node name="Mountains" type="Sprite2D" parent="."]
+scale = Vector2(2.11765, 1.55769)
+texture = ExtResource("3_5wr7h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -38,29 +44,32 @@ theme_override_constants/separation = 10
 [node name="SoundVolume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_qpr26")
+theme = ExtResource("4_vnjh4")
+theme_override_fonts/font = ExtResource("5_cej6g")
+theme_override_font_sizes/font_size = 80
 text = "Sound Volume"
 
 [node name="MusicVolume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_qpr26")
+theme = ExtResource("4_vnjh4")
+theme_override_fonts/font = ExtResource("5_cej6g")
+theme_override_font_sizes/font_size = 80
 text = "Music Volume"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_qpr26")
+theme = ExtResource("4_vnjh4")
+theme_override_fonts/font = ExtResource("5_cej6g")
+theme_override_font_sizes/font_size = 80
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_sound_volume_pressed"]
 [connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_music_volume_pressed"]
+[connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_sound_volume_pressed"]
 [connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_music_volume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]

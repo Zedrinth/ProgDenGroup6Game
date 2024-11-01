@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6fnv15imojnb"]
+[gd_scene load_steps=5 format=3 uid="uid://b6fnv15imojnb"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8vkd4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dppv4"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[ext_resource type="Texture2D" uid="uid://44yanc8go17g" path="res://Assets/GameSprites/Parallaxes/Mountains3.png" id="2_wfpal"]
+[ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="3_k6j2o"]
+[ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="4_rvtk1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,37 +16,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8vkd4")
 
+[node name="Mountains3" type="Sprite2D" parent="."]
+position = Vector2(0.890686, 0.0855408)
+rotation = 3.14159
+scale = Vector2(2.11438, -1.19241)
+texture = ExtResource("2_wfpal")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
-offset_top = -65.0
-offset_right = 320.0
-offset_bottom = 300.0
+offset_left = -119.0
+offset_right = 119.0
+offset_bottom = 296.0
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dppv4")
+theme = ExtResource("3_k6j2o")
+theme_override_fonts/font = ExtResource("4_rvtk1")
+theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dppv4")
+theme = ExtResource("3_k6j2o")
+theme_override_fonts/font = ExtResource("4_rvtk1")
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dppv4")
+theme = ExtResource("3_k6j2o")
+theme_override_fonts/font = ExtResource("4_rvtk1")
+theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
