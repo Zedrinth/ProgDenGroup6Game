@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5j4iti4fm5jb"
-path="res://.godot/imported/Dragons.png-748e250c93d4b7f4e1c95800ac12f0ea.ctex"
+uid="uid://d3hsyyu14ej76"
+path="res://.godot/imported/MenuButtonsSheet.png-f0c78978f4f1fabc5671593625ee9b89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GameSprites/Titles2/Dragons.png"
-dest_files=["res://.godot/imported/Dragons.png-748e250c93d4b7f4e1c95800ac12f0ea.ctex"]
+source_file="res://Assets/MenuButtonsSheet.png"
+dest_files=["res://.godot/imported/MenuButtonsSheet.png-f0c78978f4f1fabc5671593625ee9b89.ctex"]
 
 [params]
 

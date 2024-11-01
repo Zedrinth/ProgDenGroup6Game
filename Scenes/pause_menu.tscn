@@ -1,18 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://lusivra5d0pg"]
+[gd_scene load_steps=9 format=3 uid="uid://lusivra5d0pg"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_s07ps"]
 [ext_resource type="Shader" path="res://Assets/pause_menu.gdshader" id="2_84jtn"]
+[ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="3_wg8hj"]
+[ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="4_x5cq5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ruyi"]
 shader = ExtResource("2_84jtn")
 shader_parameter/lod = 0.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ely33"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
 
 [sub_resource type="Animation" id="Animation_0jxja"]
 length = 0.001
@@ -89,11 +84,18 @@ script = ExtResource("1_s07ps")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_4ruyi")
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(0, 0, 0, 0)
@@ -103,10 +105,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -71.0
-offset_right = 66.0
-offset_bottom = 71.0
+offset_left = -169.5
+offset_top = -148.5
+offset_right = 169.5
+offset_bottom = 148.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -117,29 +119,33 @@ theme_override_constants/separation = 10
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ely33")
+theme = ExtResource("3_wg8hj")
+theme_override_fonts/font = ExtResource("4_x5cq5")
+theme_override_font_sizes/font_size = 30
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ely33")
+theme = ExtResource("3_wg8hj")
+theme_override_fonts/font = ExtResource("4_x5cq5")
+theme_override_font_sizes/font_size = 30
 text = "Restart"
 
 [node name="Options" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ely33")
+theme = ExtResource("3_wg8hj")
+theme_override_fonts/font = ExtResource("4_x5cq5")
+theme_override_font_sizes/font_size = 30
 text = "Options"
 
 [node name="QuitToMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ely33")
+theme = ExtResource("3_wg8hj")
+theme_override_fonts/font = ExtResource("4_x5cq5")
+theme_override_font_sizes/font_size = 30
 text = "Quit To Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

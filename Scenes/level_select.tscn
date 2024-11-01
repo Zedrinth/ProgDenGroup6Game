@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://boew02pxsr5ks"]
+[gd_scene load_steps=6 format=3 uid="uid://boew02pxsr5ks"]
 
 [ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_10170"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq63v"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[ext_resource type="Texture2D" uid="uid://dco85331q5jd2" path="res://Assets/GameSprites/Parallaxes/StarlitSky.png" id="2_xeasd"]
+[ext_resource type="Texture2D" uid="uid://03jthpunbh0" path="res://Assets/GameSprites/Titles2/Mountains.png" id="3_n5kog"]
+[ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="4_lgbdw"]
+[ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="5_hiwyq"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -19,6 +16,15 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_10170")
+
+[node name="StarlitSky" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+scale = Vector2(2.11765, 1)
+texture = ExtResource("2_xeasd")
+
+[node name="Mountains" type="Sprite2D" parent="."]
+scale = Vector2(2.11765, 1.55769)
+texture = ExtResource("3_n5kog")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -38,27 +44,30 @@ theme_override_constants/separation = 10
 [node name="Level1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dq63v")
+theme = ExtResource("4_lgbdw")
+theme_override_fonts/font = ExtResource("5_hiwyq")
+theme_override_font_sizes/font_size = 80
 text = "Level 1"
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dq63v")
+theme = ExtResource("4_lgbdw")
+theme_override_fonts/font = ExtResource("5_hiwyq")
+theme_override_font_sizes/font_size = 80
 text = "Level 2"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dq63v")
+theme = ExtResource("4_lgbdw")
+theme_override_fonts/font = ExtResource("5_hiwyq")
+theme_override_font_sizes/font_size = 80
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
