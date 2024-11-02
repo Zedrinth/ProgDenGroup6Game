@@ -1,9 +1,176 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6fnv15imojnb"]
+[gd_scene load_steps=32 format=3 uid="uid://b6fnv15imojnb"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8vkd4"]
 [ext_resource type="Texture2D" uid="uid://44yanc8go17g" path="res://Assets/GameSprites/Parallaxes/Mountains3.png" id="2_wfpal"]
 [ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="3_k6j2o"]
 [ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="4_rvtk1"]
+[ext_resource type="Texture2D" uid="uid://cr5nyqtnpormu" path="res://Assets/Title.png" id="5_bf1s8"]
+[ext_resource type="Texture2D" uid="uid://dstk45lgwvyw" path="res://Assets/Leaf.png" id="6_kqdpe"]
+[ext_resource type="Texture2D" uid="uid://b4cbwqg72af3b" path="res://Assets/GameSprites/Animations/State1.png" id="7_drwru"]
+[ext_resource type="Texture2D" uid="uid://bushn6i1vkod7" path="res://Assets/GameSprites/Animations/Death1.png" id="7_ypxa7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk6sw"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga35f"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxtk1"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tjye"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owqc3"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtjst"]
+atlas = ExtResource("7_ypxa7")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3nsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk6sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga35f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxtk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tjye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owqc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtjst")
+}],
+"loop": true,
+"name": &"SpookySkeleton",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo7yx"]
+atlas = ExtResource("7_drwru")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nuxb"]
+atlas = ExtResource("7_drwru")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3skgo"]
+atlas = ExtResource("7_drwru")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfjgi"]
+atlas = ExtResource("7_drwru")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwk4i"]
+atlas = ExtResource("7_drwru")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdyot"]
+atlas = ExtResource("7_drwru")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4a12"]
+atlas = ExtResource("7_drwru")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12dng"]
+atlas = ExtResource("7_drwru")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shr0g"]
+atlas = ExtResource("7_drwru")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aupya"]
+atlas = ExtResource("7_drwru")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wl8x"]
+atlas = ExtResource("7_drwru")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4whm"]
+atlas = ExtResource("7_drwru")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awtmx"]
+atlas = ExtResource("7_drwru")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuu7m"]
+atlas = ExtResource("7_drwru")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n7ne"]
+atlas = ExtResource("7_drwru")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfepj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo7yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nuxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3skgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfjgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwk4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdyot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4a12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12dng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shr0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aupya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wl8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4whm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awtmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuu7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n7ne")
+}],
+"loop": true,
+"name": &"smok",
+"speed": 20.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +189,52 @@ rotation = 3.14159
 scale = Vector2(2.11438, -1.19241)
 texture = ExtResource("2_wfpal")
 
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(0, -172)
+texture = ExtResource("5_bf1s8")
+
+[node name="Leaf" type="Sprite2D" parent="Title"]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(-296, -48)
+scale = Vector2(0.203125, 0.1875)
+texture = ExtResource("6_kqdpe")
+
+[node name="Leaf2" type="Sprite2D" parent="Title"]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(296, 40)
+scale = Vector2(0.203125, 0.1875)
+texture = ExtResource("6_kqdpe")
+flip_h = true
+
+[node name="Sprout" type="Label" parent="Title"]
+offset_left = -256.0
+offset_top = -8.0
+offset_right = 256.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_shadow_color = Color(0.0537391, 0.206456, 0.0476189, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_rvtk1")
+theme_override_font_sizes/font_size = 130
+text = "Sprout"
+horizontal_alignment = 2
+
+[node name="Spooky" type="Label" parent="Title"]
+offset_left = -256.0
+offset_top = -112.0
+offset_right = 256.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_shadow_color = Color(0.0537391, 0.206456, 0.0476189, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_rvtk1")
+theme_override_font_sizes/font_size = 140
+text = "Spooky"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -37,6 +250,9 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Play"
@@ -45,6 +261,9 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Options"
@@ -53,9 +272,26 @@ text = "Options"
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+
+[node name="SpookySkely" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 92)
+sprite_frames = SubResource("SpriteFrames_j3nsy")
+animation = &"SpookySkeleton"
+autoplay = "SpookySkeleton"
+frame_progress = 0.958291
+
+[node name="GreenSmoke" type="AnimatedSprite2D" parent="."]
+position = Vector2(224, -236)
+sprite_frames = SubResource("SpriteFrames_rfepj")
+animation = &"smok"
+autoplay = "smok"
+frame_progress = 0.0272911
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

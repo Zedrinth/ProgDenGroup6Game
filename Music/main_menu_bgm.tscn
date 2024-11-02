@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://by4838ro373og"]
+
+[ext_resource type="AudioStream" uid="uid://ci4eo03uw574m" path="res://Assets/HoloCure OST - Koyoi wa Halloween Night! (Extended Loop).mp3" id="1_8nhcd"]
+
+[node name="MusicVolume" type="AudioStreamPlayer"]
+stream = ExtResource("1_8nhcd")
+autoplay = true
+bus = &"Music Volume"
+parameters/looping = true

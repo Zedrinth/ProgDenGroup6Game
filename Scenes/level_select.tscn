@@ -45,6 +45,9 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Level 1"
@@ -53,6 +56,9 @@ text = "Level 1"
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Level 2"
@@ -61,13 +67,16 @@ text = "Level 2"
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
