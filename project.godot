@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-Hud="*res://Scripts/HUD.gd"
 
 [dotnet]
 

@@ -409,23 +409,35 @@ anchor_bottom = 1.0
 script = ExtResource("6_pcwnf")
 
 [node name="Panel" type="Panel" parent="HUD"]
-offset_left = 17.0
-offset_top = 15.0
-offset_right = 195.0
-offset_bottom = 82.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 194.0
+offset_bottom = 83.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_af20w")
 
 [node name="KeyHUD" type="TextureRect" parent="HUD"]
-offset_left = 15.0
-offset_top = 26.0
-offset_right = 55.0
-offset_bottom = 66.0
+texture_filter = 1
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 72.0
+offset_bottom = 112.0
+rotation = -1.57079
 texture = ExtResource("7_m3mis")
 
-[node name="Label" type="Label" parent="HUD"]
-texture_filter = 3
-offset_left = 55.0
-offset_top = 34.0
-offset_right = 95.0
-offset_bottom = 57.0
-text = "X"
+[node name="KeyHUD2" type="TextureRect" parent="HUD"]
+texture_filter = 1
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 112.0
+rotation = -1.57079
+texture = ExtResource("7_m3mis")
+
+[node name="KeyHUD3" type="TextureRect" parent="HUD"]
+texture_filter = 1
+offset_left = 144.0
+offset_top = 72.0
+offset_right = 184.0
+offset_bottom = 112.0
+rotation = -1.57079
+texture = ExtResource("7_m3mis")
