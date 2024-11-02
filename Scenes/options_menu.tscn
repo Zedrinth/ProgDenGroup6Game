@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqu6s3isdg2c"]
+[gd_scene load_steps=10 format=3 uid="uid://cqu6s3isdg2c"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_j4fp5"]
 [ext_resource type="Texture2D" uid="uid://dco85331q5jd2" path="res://Assets/GameSprites/Parallaxes/StarlitSky.png" id="2_n701f"]
 [ext_resource type="Texture2D" uid="uid://03jthpunbh0" path="res://Assets/GameSprites/Titles2/Mountains.png" id="3_5wr7h"]
 [ext_resource type="Theme" uid="uid://1bs3lltnrfdo" path="res://Assets/custom1.tres" id="4_vnjh4"]
 [ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="5_cej6g"]
+[ext_resource type="PackedScene" uid="uid://cxy76lr34sb8e" path="res://Scenes/volume_slider.tscn" id="5_nb0he"]
+[ext_resource type="Texture2D" uid="uid://d4i5pc6yxdyjm" path="res://Assets/NormalButton.png" id="5_sm7ww"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6j41o"]
+texture = ExtResource("5_sm7ww")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5nwi"]
+texture = ExtResource("5_sm7ww")
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -33,43 +41,81 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -260.0
-offset_right = 384.0
-offset_bottom = 252.0
+offset_left = -427.5
+offset_top = -299.5
+offset_right = 427.5
+offset_bottom = 299.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="SoundVolume" type="Button" parent="VBoxContainer"]
+[node name="Master" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_vnjh4")
+theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
+theme_override_colors/font_shadow_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_cej6g")
-theme_override_font_sizes/font_size = 80
-text = "Sound Volume"
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6j41o")
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MusicVolume" type="Button" parent="VBoxContainer"]
+[node name="MasterVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
+
+[node name="Sound" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_vnjh4")
+theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
+theme_override_colors/font_shadow_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_cej6g")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6j41o")
+text = "Sound Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
+theme_override_colors/font_shadow_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_cej6g")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6j41o")
 text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_vnjh4")
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.207843, 0.0470588, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_cej6g")
 theme_override_font_sizes/font_size = 80
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/SoundVolume" to="." method="_on_sound_volume_pressed"]
-[connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/MusicVolume" to="." method="_on_music_volume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
