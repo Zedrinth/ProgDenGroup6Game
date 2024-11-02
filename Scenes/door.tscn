@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://bborceu6eqkox"]
+
+[ext_resource type="Texture2D" uid="uid://csp7p3ptps0yp" path="res://Assets/GameSprites/Characters/!$Gate1.png" id="1_hexd0"]
+[ext_resource type="Script" path="res://Scenes/door.gd" id="1_skjqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jup2"]
+size = Vector2(66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1qw"]
+atlas = ExtResource("1_hexd0")
+region = Rect2(0, 64, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50t1i"]
+atlas = ExtResource("1_hexd0")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_443qo"]
+atlas = ExtResource("1_hexd0")
+region = Rect2(0, 128, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq1pr"]
+atlas = ExtResource("1_hexd0")
+region = Rect2(0, 192, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amdu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq1qw")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50t1i")
+}],
+"loop": true,
+"name": &"Locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_443qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq1pr")
+}],
+"loop": true,
+"name": &"Opened",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5n0b"]
+size = Vector2(123, 67)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_skjqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+shape = SubResource("RectangleShape2D_2jup2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_amdu7")
+animation = &"Locked"
+autoplay = "Locked"
+
+[node name="nearDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nearDoor"]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_e5n0b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="nearDoor" to="." method="_on_near_door_body_entered"]
