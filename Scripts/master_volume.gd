@@ -3,6 +3,7 @@ extends HSlider
 
 var master_bus = AudioServer.get_bus_index("Master")
 
+@warning_ignore("shadowed_variable_base_class")
 func _on_master_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus, value)
 	
