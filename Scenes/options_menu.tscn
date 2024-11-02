@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqu6s3isdg2c"]
+[gd_scene load_steps=12 format=3 uid="uid://cqu6s3isdg2c"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_j4fp5"]
 [ext_resource type="Texture2D" uid="uid://dco85331q5jd2" path="res://Assets/GameSprites/Parallaxes/StarlitSky.png" id="2_n701f"]
@@ -7,11 +7,11 @@
 [ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="5_cej6g"]
 [ext_resource type="PackedScene" uid="uid://cxy76lr34sb8e" path="res://Scenes/volume_slider.tscn" id="5_nb0he"]
 [ext_resource type="Texture2D" uid="uid://d4i5pc6yxdyjm" path="res://Assets/NormalButton.png" id="5_sm7ww"]
+[ext_resource type="PackedScene" uid="uid://crkpm8ohnvt83" path="res://Scenes/vol_slider.tscn" id="6_agiyx"]
+[ext_resource type="Script" path="res://Scripts/sound_volume.gd" id="7_6ckwv"]
+[ext_resource type="Script" path="res://Scripts/music_volume.gd" id="8_ihceu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6j41o"]
-texture = ExtResource("5_sm7ww")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5nwi"]
 texture = ExtResource("5_sm7ww")
 
 [node name="OptionsMenu" type="Control"]
@@ -63,10 +63,8 @@ text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MasterVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
+[node name="MasterVol" parent="VBoxContainer" instance=ExtResource("6_agiyx")]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
 
 [node name="Sound" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -82,10 +80,9 @@ text = "Sound Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SoundVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
+[node name="SoundVol" parent="VBoxContainer" instance=ExtResource("6_agiyx")]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
+script = ExtResource("7_6ckwv")
 
 [node name="Music" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -104,7 +101,10 @@ vertical_alignment = 1
 [node name="MusicVol" parent="VBoxContainer" instance=ExtResource("5_nb0he")]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_styles/slider = SubResource("StyleBoxTexture_a5nwi")
+min_value = -30.0
+max_value = 0.0
+step = 1.0
+script = ExtResource("8_ihceu")
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -117,5 +117,9 @@ theme_override_fonts/font = ExtResource("5_cej6g")
 theme_override_font_sizes/font_size = 80
 text = "Back"
 
+[connection signal="value_changed" from="VBoxContainer/MasterVol" to="VBoxContainer/MasterVol" method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SoundVol" to="." method="_on_sound_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SoundVol" to="VBoxContainer/SoundVol" method="_on_sound_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVol" to="VBoxContainer/MusicVol" method="_on_music_vol_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
