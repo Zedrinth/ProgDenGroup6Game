@@ -21,6 +21,10 @@ MusicManager="*res://Scenes/music_manager.tscn"
 Global="*res://Scripts/Global.gd"
 TransitionScreen="*res://Scenes/transition_screen.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="ProgDenG6Game"
