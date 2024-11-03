@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jv0i5vm0j757"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_xnak7"]
-[ext_resource type="Texture2D" uid="uid://dxnurr3cdkx6" path="res://Assets/GameSprites/pixel_art_keys/key_small2.png" id="2_ar3wc"]
+[ext_resource type="Texture2D" uid="uid://cckf62h34aif7" path="res://Assets/Legacy Collection/Packs/Meta data assets files/Visuals/OBJECTS/items/key.png" id="2_gyy5o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af20w"]
 bg_color = Color(0, 0, 0, 0.227451)
@@ -22,27 +22,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_af20w")
 
 [node name="KeyHUD" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 32.0
-offset_top = 72.0
-offset_right = 72.0
-offset_bottom = 112.0
-rotation = -1.57079
-texture = ExtResource("2_ar3wc")
+offset_left = 128.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 64.0
+texture = ExtResource("2_gyy5o")
 
 [node name="KeyHUD2" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 88.0
-offset_top = 72.0
-offset_right = 128.0
-offset_bottom = 112.0
-rotation = -1.57079
-texture = ExtResource("2_ar3wc")
+offset_left = 136.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 64.0
+texture = ExtResource("2_gyy5o")
 
 [node name="KeyHUD3" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 144.0
-offset_top = 72.0
-offset_right = 184.0
-offset_bottom = 112.0
-rotation = -1.57079
-texture = ExtResource("2_ar3wc")
+offset_left = 152.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 64.0
+texture = ExtResource("2_gyy5o")
