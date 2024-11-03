@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://by4838ro373og"]
 
-[ext_resource type="AudioStream" uid="uid://ci4eo03uw574m" path="res://Assets/HoloCure OST - Koyoi wa Halloween Night! (Extended Loop).mp3" id="1_8nhcd"]
+[ext_resource type="AudioStream" uid="uid://c8a8hl58s77ff" path="res://Music/Dark Souls III - 8-Bit Revision.mp3" id="1_21ecw"]
 
 [node name="BGM" type="AudioStreamPlayer"]
-stream = ExtResource("1_8nhcd")
+stream = ExtResource("1_21ecw")
 autoplay = true
 bus = &"MainMenuBGM"
 parameters/looping = true
