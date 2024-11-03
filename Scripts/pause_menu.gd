@@ -26,7 +26,7 @@ func _on_restart_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://Scenes/options_pause_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/options_pause_menu_l1.tscn")
 
 
 func _on_quit_to_menu_pressed():
