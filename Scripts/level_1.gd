@@ -4,3 +4,4 @@ func _ready():
 	TransitionScreen.transitionToNormal()
 	MusicManager.mmbgm.stop()
 	MusicManager.lvbgm.play()
+

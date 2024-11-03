@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=4 uid="uid://c8a3tmhksh4ax"]
 
-[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_3gojk"]
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_3ox78"]
 [ext_resource type="PackedScene" uid="uid://ddah82uvi8012" path="res://Scenes/player.tscn" id="1_baqm2"]
 [ext_resource type="Texture2D" uid="uid://c6qas8qu2yx2h" path="res://icon.svg" id="2_o215i"]
 [ext_resource type="PackedScene" uid="uid://lusivra5d0pg" path="res://Scenes/pause_menu.tscn" id="2_pix5s"]
@@ -7091,7 +7091,7 @@ animations = [{
 
 [node name="Level2" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_3gojk")
+script = ExtResource("1_3ox78")
 
 [node name="Lava-background-preview" type="Sprite2D" parent="."]
 position = Vector2(928, 272)
@@ -7120,7 +7120,7 @@ tile_set = SubResource("TileSet_7l5hk")
 position = Vector2(91, -73)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 limit_left = 25
 limit_top = -182
 limit_right = 1832
