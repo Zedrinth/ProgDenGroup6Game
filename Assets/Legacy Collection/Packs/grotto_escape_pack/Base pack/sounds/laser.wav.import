@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpgs4bo3t5rim"
+path="res://.godot/imported/laser.wav-359d6e4c824b20e710c1d7dad85f475e.sample"
+
+[deps]
+
+source_file="res://Assets/Legacy Collection/Packs/grotto_escape_pack/Base pack/sounds/laser.wav"
+dest_files=["res://.godot/imported/laser.wav-359d6e4c824b20e710c1d7dad85f475e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
