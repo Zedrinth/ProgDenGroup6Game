@@ -5,5 +5,4 @@
 [node name="BGM" type="AudioStreamPlayer"]
 stream = ExtResource("1_21ecw")
 autoplay = true
-bus = &"MainMenuBGM"
 parameters/looping = true
