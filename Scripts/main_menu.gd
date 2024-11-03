@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	MusicManager.lvbgm.stop()
+	MusicManager.lv1bgm.stop()
+	MusicManager.lv2bgm.stop()
 	MusicManager.mmbgm.play() 
 
 

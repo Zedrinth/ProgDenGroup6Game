@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	$AnimationPlayer.play("RESET")
 
-func resume():
+func _resume():
 	get_tree().paused = false
 	$AnimationPlayer.play("RESET")
 
@@ -15,10 +15,10 @@ func escPause():
 	if Input.is_action_just_pressed("pause") and !get_tree().paused:
 		pause()
 	elif Input.is_action_just_pressed("pause") and get_tree().paused:
-		resume()
+		_resume()
 
 func _on_resume_pressed():
-	resume()
+	_resume()
 
 
 func _on_restart_pressed():
@@ -30,8 +30,10 @@ func _on_options_pressed():
 
 
 func _on_quit_to_menu_pressed():
-	resume()
+	_resume()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	MusicManager.lv1bgm.stop()
+	MusicManager.lv2bgm.stop()
 
 func _process(_delta):
 	escPause()
