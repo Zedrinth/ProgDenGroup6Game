@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddorxmhi1bkmj"]
+
+[ext_resource type="Texture2D" uid="uid://csp7p3ptps0yp" path="res://Assets/GameSprites/Characters/!$Gate1.png" id="1_1xwm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3dn"]
+atlas = ExtResource("1_1xwm3")
+region = Rect2(96, 192, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_235q5"]
+atlas = ExtResource("1_1xwm3")
+region = Rect2(96, 128, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxpag"]
+atlas = ExtResource("1_1xwm3")
+region = Rect2(96, 64, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06p5c"]
+atlas = ExtResource("1_1xwm3")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7tf3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m3dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_235q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxpag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06p5c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7tf3s")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
