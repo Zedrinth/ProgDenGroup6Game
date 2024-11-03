@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://buk2j5uehujde" path="res://Character Sprites/Plant_Walk.png" id="5_krbtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8akh8"]
-size = Vector2(16, 26)
+size = Vector2(10, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkxui"]
 atlas = ExtResource("3_2vnxs")
@@ -127,21 +127,21 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_th3g3")
 
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_8akh8")
 one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-2.08616e-07, -2.98023e-07)
-scale = Vector2(0.941176, 1.04)
+position = Vector2(0, -13.76)
+scale = Vector2(0.941176, 1.05846)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
 animation = &"Walking"
 autoplay = "Idle"
-frame_progress = 0.721892
 
 [node name="dash_again_timer" type="Timer" parent="."]
+wait_time = 0.2
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2

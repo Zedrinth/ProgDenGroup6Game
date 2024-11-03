@@ -1,5 +1,6 @@
 extends Node2D
 
 func _ready():
-	MusicManager.mmbgm.stop()
-	MusicManager.lvbgm.play()
+	TransitionScreen.transitionToNormal()
+	MusicManager.lv1bgm.play()
+

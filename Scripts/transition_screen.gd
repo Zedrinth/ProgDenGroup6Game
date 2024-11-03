@@ -14,10 +14,8 @@ func _on_animation_finished(anim_name):
 	if anim_name == "FadeToBlack":
 		#animation_player.play("FadeToNormal")
 		on_transition_finished.emit()
-		print("finished")
 	elif anim_name == "FadeToNormal":
 		on_transition_finished.emit()
-		print("finished")
 		#color_rect.visible = false
 
 
@@ -31,5 +29,5 @@ func transitionToNormal():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

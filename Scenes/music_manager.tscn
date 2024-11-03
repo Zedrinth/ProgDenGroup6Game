@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvvb0rbaavw55"]
+[gd_scene load_steps=5 format=3 uid="uid://bvvb0rbaavw55"]
 
 [ext_resource type="Script" path="res://Music/music_manager.gd" id="1_46wnl"]
 [ext_resource type="AudioStream" uid="uid://c8a8hl58s77ff" path="res://Music/Dark Souls III - 8-Bit Revision.mp3" id="2_3uvou"]
+[ext_resource type="AudioStream" uid="uid://wp1goaafwtu" path="res://Music/[8-Bit] American Football - Never Meant.mp3" id="2_jsugr"]
 [ext_resource type="AudioStream" uid="uid://ci4eo03uw574m" path="res://Music/HoloCure OST - Koyoi wa Halloween Night! (Extended Loop).mp3" id="3_4oowr"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_46wnl")
 
 [node name="MainMenuBGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3uvou")
+stream = ExtResource("2_jsugr")
 bus = &"music"
 parameters/looping = true
 
-[node name="LevelsBGM" type="AudioStreamPlayer" parent="."]
+[node name="Level1BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4oowr")
+volume_db = -5.0
+bus = &"music"
+parameters/looping = true
+
+[node name="Level2BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3uvou")
 bus = &"music"
 parameters/looping = true

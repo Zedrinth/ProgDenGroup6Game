@@ -185,30 +185,47 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8vkd4")
 
-[node name="Mountains3" type="Sprite2D" parent="."]
-position = Vector2(0.890686, 0.0855408)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.543
+anchor_right = 0.5
+anchor_bottom = 0.543
+offset_left = -119.0
+offset_top = 0.135986
+offset_right = 119.0
+offset_bottom = 296.136
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Mountains3" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(118.966, -27.9145)
 rotation = 3.14159
-scale = Vector2(2.11438, -1.19241)
+scale = Vector2(2.11778, -1.19241)
 texture = ExtResource("2_wfpal")
 
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(0, -172)
+[node name="Title" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(119, -200)
 texture = ExtResource("5_bf1s8")
 
-[node name="Leaf" type="Sprite2D" parent="Title"]
+[node name="Leaf" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Title"]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(-296, -48)
 scale = Vector2(0.203125, 0.1875)
 texture = ExtResource("6_kqdpe")
 
-[node name="Leaf2" type="Sprite2D" parent="Title"]
+[node name="Leaf2" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Title"]
 modulate = Color(1, 1, 1, 0.568627)
 position = Vector2(296, 40)
 scale = Vector2(0.203125, 0.1875)
 texture = ExtResource("6_kqdpe")
 flip_h = true
 
-[node name="Sprout" type="Label" parent="Title"]
+[node name="Sprout" type="Label" parent="CanvasLayer/VBoxContainer/Title"]
 offset_left = -256.0
 offset_top = -8.0
 offset_right = 256.0
@@ -223,7 +240,7 @@ theme_override_font_sizes/font_size = 130
 text = "Sprout"
 horizontal_alignment = 2
 
-[node name="Spooky" type="Label" parent="Title"]
+[node name="Spooky" type="Label" parent="CanvasLayer/VBoxContainer/Title"]
 offset_left = -256.0
 offset_top = -112.0
 offset_right = 256.0
@@ -237,18 +254,7 @@ theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 140
 text = "Spooky"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -119.0
-offset_right = 119.0
-offset_bottom = 296.0
-grow_horizontal = 2
-theme_override_constants/separation = 10
-
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
@@ -259,7 +265,7 @@ theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
@@ -270,7 +276,7 @@ theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_k6j2o")
@@ -281,15 +287,15 @@ theme_override_fonts/font = ExtResource("4_rvtk1")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="SpookySkely" type="AnimatedSprite2D" parent="."]
-position = Vector2(320, 92)
+[node name="SpookySkely" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(896, 416)
 sprite_frames = SubResource("SpriteFrames_j3nsy")
 animation = &"SpookySkeleton"
 autoplay = "SpookySkeleton"
 frame_progress = 0.958291
 
-[node name="GreenSmoke" type="AnimatedSprite2D" parent="."]
-position = Vector2(224, -236)
+[node name="GreenSmoke" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(800, 88)
 sprite_frames = SubResource("SpriteFrames_rfepj")
 animation = &"smok"
 autoplay = "smok"
@@ -303,6 +309,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
