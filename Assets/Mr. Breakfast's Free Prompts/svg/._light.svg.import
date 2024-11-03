@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://le2htmr1vbch"
-path="res://.godot/imported/Plant_Walking-Sheet.svg-a69602238e5fcb15ad6f539a0eb2a275.ctex"
+uid="uid://df351mce5v1f6"
+path="res://.godot/imported/._light.svg-3d1b1905d9f9867cf9560521663f87a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Sprites/Plant_Walking-Sheet.svg"
-dest_files=["res://.godot/imported/Plant_Walking-Sheet.svg-a69602238e5fcb15ad6f539a0eb2a275.ctex"]
+source_file="res://Assets/Mr. Breakfast's Free Prompts/svg/._light.svg"
+dest_files=["res://.godot/imported/._light.svg-3d1b1905d9f9867cf9560521663f87a1.ctex"]
 
 [params]
 

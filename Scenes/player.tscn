@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://ddah82uvi8012"]
+[gd_scene load_steps=26 format=3 uid="uid://ddah82uvi8012"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_th3g3"]
+[ext_resource type="Texture2D" uid="uid://dy2wh0c4h3ycx" path="res://Character Sprites/Plant_Dash - Copy (2).png" id="2_lrpe7"]
 [ext_resource type="Texture2D" uid="uid://duw8ca33pmicu" path="res://Character Sprites/Plant_Idle Co.png" id="3_2vnxs"]
 [ext_resource type="Texture2D" uid="uid://cyr8t5ag72haf" path="res://Character Sprites/Plant_Jumping-export.png" id="4_v5u4p"]
 [ext_resource type="Texture2D" uid="uid://buk2j5uehujde" path="res://Character Sprites/Plant_Walk.png" id="5_krbtq"]
@@ -8,6 +9,22 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkay2"]
 radius = 5.0
 height = 25.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dxgm"]
+atlas = ExtResource("2_lrpe7")
+region = Rect2(51, 0, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x142t"]
+atlas = ExtResource("2_lrpe7")
+region = Rect2(34, 0, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yutn"]
+atlas = ExtResource("2_lrpe7")
+region = Rect2(17, 0, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q1wo"]
+atlas = ExtResource("2_lrpe7")
+region = Rect2(0, 0, 17, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkxui"]
 atlas = ExtResource("3_2vnxs")
@@ -67,6 +84,23 @@ region = Rect2(0, 0, 16, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0m5e"]
 animations = [{
+"frames": [{
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_2dxgm")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_x142t")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_6yutn")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_4q1wo")
+}],
+"loop": true,
+"name": &"Dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkxui")
@@ -142,8 +176,9 @@ texture_filter = 1
 position = Vector2(0, -13.76)
 scale = Vector2(0.941176, 1.05846)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
-animation = &"Walking"
+animation = &"Dash"
 autoplay = "Idle"
+frame_progress = 0.802885
 
 [node name="dash_again_timer" type="Timer" parent="."]
 wait_time = 0.2

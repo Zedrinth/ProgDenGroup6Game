@@ -5,7 +5,8 @@ class_name Player
 const SPEED = 150.0
 const JUMP_VELOCITY = 255
 const GRAVITY = 700
-
+@export var Cayote_Time: float = 0.1
+var Jump_Available: bool = true
 const DASH_SPEED = 400.0
 var dashing = false
 var can_dash = true
@@ -23,6 +24,7 @@ func _physics_process(delta):
 		can_dash = false
 		$dash_timer.start()
 		$dash_again_timer.start()
+		$AnimatedSprite2D.play("Dash")
 		
 	if direction:
 		if dashing:
@@ -44,15 +46,21 @@ func _physics_process(delta):
 		
 	#Jumping
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and Jump_Available:
 		velocity.y -= JUMP_VELOCITY
+		Jump_Available = false
 		$AnimatedSprite2D.play("Jumping")
 	#Gravity
 	if not is_on_floor():
+		if Jump_Available:
+			get_tree().create_timer(Cayote_Time).timeout.connect(Cayote_Timeout)
 		velocity.y += GRAVITY * delta
+	else:
+		Jump_Available = true
 	move_and_slide()
 	
-
+func Cayote_Timeout():
+	Jump_Available = false
 
 
 func _on_dash_timer_timeout() -> void:

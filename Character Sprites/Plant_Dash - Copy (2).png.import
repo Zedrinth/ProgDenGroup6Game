@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3ywwniljrnqf"
-path="res://.godot/imported/Plant_Idle Co.svg-ada0073cd8dc454f52600e322405dfdc.ctex"
+uid="uid://dy2wh0c4h3ycx"
+path="res://.godot/imported/Plant_Dash - Copy (2).png-057aa93f71fd51cdcb3e406410f0ad1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Sprites/Plant_Idle Co.svg"
-dest_files=["res://.godot/imported/Plant_Idle Co.svg-ada0073cd8dc454f52600e322405dfdc.ctex"]
+source_file="res://Character Sprites/Plant_Dash - Copy (2).png"
+dest_files=["res://.godot/imported/Plant_Dash - Copy (2).png-057aa93f71fd51cdcb3e406410f0ad1d.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
