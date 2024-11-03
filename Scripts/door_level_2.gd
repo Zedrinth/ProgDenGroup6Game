@@ -5,9 +5,6 @@ extends Area2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-
-
 var isOverDoor := false
 var isLocked := true
 
@@ -19,9 +16,9 @@ func _process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Opened":
-		TransitionScreen.transitionToBlack()
-		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+		#TransitionScreen.transitionToBlack()
+		#await TransitionScreen.on_transition_finished
+		get_tree().change_scene_to_file("res://Scenes/victory_screen.tscn")
 		
 
 func _on_body_entered(body: Node2D) -> void:
