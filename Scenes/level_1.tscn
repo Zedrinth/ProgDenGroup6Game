@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8p12syv0ieom"]
-
-[ext_resource type="PackedScene" uid="uid://jv0i5vm0j757" path="res://Scenes/HUD.tscn" id="1_pmgei"]
-
-[node name="Level1" type="Node2D"]
-process_mode = 1
-
-[node name="HUD" parent="." instance=ExtResource("1_pmgei")]
