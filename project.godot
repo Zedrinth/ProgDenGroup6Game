@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MainMenuBgm="*res://Music/main_menu_bgm.tscn"
+MusicManager="*res://Scenes/music_manager.tscn"
 
 [dotnet]
 

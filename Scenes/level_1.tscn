@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=61 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
 [ext_resource type="PackedScene" uid="uid://ddah82uvi8012" path="res://Scenes/player.tscn" id="1_ubxhc"]
 [ext_resource type="Texture2D" uid="uid://6ol81k78nvri" path="res://Assets/GameSprites/Characters/!$Gate2.png" id="2_heu77"]
 [ext_resource type="Texture2D" uid="uid://35fdaestsx2e" path="res://Assets/Legacy Collection/Environments/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" id="2_j503u"]
@@ -8723,6 +8724,7 @@ animations = [{
 
 [node name="Level1" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_k3m6b")
 
 [node name="Old-dark-castle-interior-background" type="Sprite2D" parent="."]
 position = Vector2(544, -255.5)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=4 uid="uid://c8a3tmhksh4ax"]
+[gd_scene load_steps=50 format=4 uid="uid://c8a3tmhksh4ax"]
 
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_3gojk"]
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
 [ext_resource type="PackedScene" uid="uid://ddah82uvi8012" path="res://Scenes/player.tscn" id="1_baqm2"]
 [ext_resource type="Texture2D" uid="uid://c6qas8qu2yx2h" path="res://icon.svg" id="2_o215i"]
@@ -7087,6 +7088,7 @@ animations = [{
 
 [node name="Level2" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_3gojk")
 
 [node name="Lava-background-preview" type="Sprite2D" parent="."]
 position = Vector2(928, 272)
@@ -7120,93 +7122,95 @@ editor_draw_limits = true
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_pix5s")]
 
-[node name="Bee" type="AnimatedSprite2D" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="Bee" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(272, 96)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 
-[node name="Bee2" type="AnimatedSprite2D" parent="."]
+[node name="Bee2" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(392, -80)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 flip_h = true
 
-[node name="Bee3" type="AnimatedSprite2D" parent="."]
+[node name="Bee3" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(1264, -96)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 
-[node name="Bee4" type="AnimatedSprite2D" parent="."]
+[node name="Bee4" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(664, 152)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 flip_h = true
 
-[node name="Bee5" type="AnimatedSprite2D" parent="."]
+[node name="Bee5" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(929, 226)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 
-[node name="Bee6" type="AnimatedSprite2D" parent="."]
+[node name="Bee6" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(176, 480)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 flip_h = true
 
-[node name="Bee7" type="AnimatedSprite2D" parent="."]
+[node name="Bee7" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(920, 408)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 
-[node name="Bee8" type="AnimatedSprite2D" parent="."]
+[node name="Bee8" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(1048, 264)
 sprite_frames = SubResource("SpriteFrames_vws6o")
 autoplay = "default"
 flip_h = true
 
-[node name="Snail" type="AnimatedSprite2D" parent="."]
+[node name="Snail" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(544, 504)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 
-[node name="Snail4" type="AnimatedSprite2D" parent="."]
+[node name="Snail4" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(1288, 376)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 
-[node name="Snail5" type="AnimatedSprite2D" parent="."]
+[node name="Snail5" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(1120, -40)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 
-[node name="Snail6" type="AnimatedSprite2D" parent="."]
+[node name="Snail6" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(1408, -40)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 
-[node name="Snail2" type="AnimatedSprite2D" parent="."]
+[node name="Snail2" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(208, 536)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 flip_h = true
 
-[node name="Snail3" type="AnimatedSprite2D" parent="."]
+[node name="Snail3" type="AnimatedSprite2D" parent="Node"]
 position = Vector2(208, 536)
 sprite_frames = SubResource("SpriteFrames_d7wh7")
 autoplay = "default"
 flip_h = true
 
-[node name="Key" type="Sprite2D" parent="."]
+[node name="Key" type="Sprite2D" parent="Node"]
 position = Vector2(164, 284)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_wu3jr")
 
-[node name="Key2" type="Sprite2D" parent="."]
+[node name="Key2" type="Sprite2D" parent="Node"]
 position = Vector2(288, 464)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_wu3jr")
 
-[node name="Key3" type="Sprite2D" parent="."]
+[node name="Key3" type="Sprite2D" parent="Node"]
 position = Vector2(1544, 456)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_wu3jr")

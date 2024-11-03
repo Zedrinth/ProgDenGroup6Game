@@ -1,6 +1,6 @@
 extends HSlider
 
-var music_bus = AudioServer.get_bus_index("MainMenuBGM")
+var music_bus = AudioServer.get_bus_index("music")
 
 @warning_ignore("shadowed_variable_base_class")
 func _on_music_vol_value_changed(value: float) -> void:
