@@ -176,7 +176,7 @@ autoplay = "Idle"
 frame_progress = 0.802885
 
 [node name="dash_again_timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.6
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2
