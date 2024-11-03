@@ -9,6 +9,10 @@ const GRAVITY = 700
 const DASH_SPEED = 400.0
 var dashing = false
 var can_dash = true
+
+func _ready():
+	GameManager.player = self
+
 #Movement
 func _physics_process(delta):
 	
@@ -50,9 +54,17 @@ func _physics_process(delta):
 	
 
 
+
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 
 
 func _on_dash_again_timer_timeout() -> void:
 	can_dash = true
+
+
+func die():
+	GameManager.respawn_player()
+
+#func takedmg():
+	
