@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://detj4eo1yviu0"]
 
-[ext_resource type="Texture2D" uid="uid://dxnurr3cdkx6" path="res://Assets/GameSprites/pixel_art_keys/key_small2.png" id="1_1p5d8"]
 [ext_resource type="Script" path="res://Scripts/key.gd" id="1_r1u6l"]
+[ext_resource type="Texture2D" uid="uid://cckf62h34aif7" path="res://Assets/Legacy Collection/Packs/Meta data assets files/Visuals/OBJECTS/items/key.png" id="2_lg5wj"]
 [ext_resource type="AudioStream" uid="uid://ha7nmsohptvs" path="res://Assets/Audio/KeyPickup.mp3" id="3_n6gih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uyyw"]
-size = Vector2(13, 7)
+size = Vector2(9, 13)
 
 [node name="key" type="Area2D"]
 collision_layer = 0
@@ -13,10 +13,10 @@ script = ExtResource("1_r1u6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_1p5d8")
+texture = ExtResource("2_lg5wj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_2uyyw")
 
 [node name="KeyPickup" type="AudioStreamPlayer" parent="."]
