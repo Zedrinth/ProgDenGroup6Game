@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjahko2ihi178"]
+[gd_scene load_steps=12 format=3 uid="uid://bjahko2ihi178"]
 
 [ext_resource type="Script" path="res://Scripts/victory_screen.gd" id="1_f671r"]
+[ext_resource type="Texture2D" uid="uid://cb8boirrn4l2r" path="res://Assets/HoverButton.png" id="2_4wla1"]
+[ext_resource type="Texture2D" uid="uid://diowp010b3pxh" path="res://Assets/Sunny Land Collection Files/Environments/Sunny Rocky/PNG/sunny-mountains-sky.png" id="2_d62xd"]
+[ext_resource type="Texture2D" uid="uid://go14ws063lim" path="res://Assets/Sunny Land Collection Files/Environments/Sunny Rocky/PNG/sunny-mountains-hills.png" id="3_phl6m"]
+[ext_resource type="Texture2D" uid="uid://culja3fj7gbgo" path="res://Assets/PressedButton.png" id="3_rijm3"]
+[ext_resource type="Texture2D" uid="uid://cr5nyqtnpormu" path="res://Assets/Title.png" id="4_5fdj0"]
+[ext_resource type="Texture2D" uid="uid://d4i5pc6yxdyjm" path="res://Assets/NormalButton.png" id="4_t4wm8"]
+[ext_resource type="FontFile" uid="uid://j2y2lm8yox0l" path="res://Assets/the unseen.ttf" id="5_bhbxf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dppv4"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueei0"]
+texture = ExtResource("2_4wla1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0y7a"]
+texture = ExtResource("3_rijm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8j4ms"]
+texture = ExtResource("4_t4wm8")
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -20,23 +29,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f671r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sunny-mountains-sky" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 324)
+scale = Vector2(4.5, 2.89286)
+texture = ExtResource("2_d62xd")
+
+[node name="Sunny-mountains-hills" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 364)
+scale = Vector2(4.5, 2.53571)
+texture = ExtResource("3_phl6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 129)
+scale = Vector2(1, 0.846667)
+texture = ExtResource("4_5fdj0")
+
+[node name="Label" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -296.0
+offset_top = -64.0
+offset_right = 303.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_shadow_color = Color(0.0117647, 0.247059, 0.054902, 1)
+theme_override_colors/font_outline_color = Color(0.0117647, 0.247059, 0.054902, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("5_bhbxf")
+theme_override_font_sizes/font_size = 150
+text = "Victory!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.0
-offset_top = 201.0
+offset_top = 525.0
 offset_right = 320.0
-offset_bottom = 300.0
+offset_bottom = 624.0
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
-[node name="BackMainMenu" type="Button" parent="VBoxContainer"]
+[node name="BackMainMenu" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_dppv4")
-text = "Quit"
+theme_override_colors/font_color = Color(0.223529, 0.658824, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.0117647, 0.247059, 0.054902, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_bhbxf")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxTexture_ueei0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l0y7a")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8j4ms")
+text = "Back to Main Menu"
 
-[connection signal="pressed" from="VBoxContainer/BackMainMenu" to="." method="_on_back_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BackMainMenu" to="." method="_on_back_main_menu_pressed"]

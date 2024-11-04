@@ -13,8 +13,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Opened":
 		TransitionScreen.transitionToBlack()
 		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+		get_tree().paused = false
 		MusicManager.lv1bgm.stop()
+		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+
 
 func _on_body_entered(body: Node2D) -> void:
 	isOverDoor = true
