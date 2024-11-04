@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b6fnv15imojnb"]
+[gd_scene load_steps=32 format=3 uid="uid://b6fnv15imojnb"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8vkd4"]
 [ext_resource type="Texture2D" uid="uid://44yanc8go17g" path="res://Assets/GameSprites/Parallaxes/Mountains3.png" id="2_wfpal"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dstk45lgwvyw" path="res://Assets/Leaf.png" id="6_kqdpe"]
 [ext_resource type="Texture2D" uid="uid://b4cbwqg72af3b" path="res://Assets/GameSprites/Animations/State1.png" id="7_drwru"]
 [ext_resource type="Texture2D" uid="uid://bushn6i1vkod7" path="res://Assets/GameSprites/Animations/Death1.png" id="7_ypxa7"]
-[ext_resource type="PackedScene" uid="uid://boew02pxsr5ks" path="res://Scenes/level_select.tscn" id="9_xr3op"]
-[ext_resource type="PackedScene" uid="uid://cqu6s3isdg2c" path="res://Scenes/options_menu.tscn" id="10_8vsfm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk6sw"]
 atlas = ExtResource("7_ypxa7")
@@ -175,7 +173,6 @@ animations = [{
 }]
 
 [node name="MainMenu" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -187,7 +184,6 @@ grow_vertical = 2
 script = ExtResource("1_8vkd4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
@@ -301,14 +297,6 @@ sprite_frames = SubResource("SpriteFrames_rfepj")
 animation = &"smok"
 autoplay = "smok"
 frame_progress = 0.0272911
-
-[node name="LevelSelect" parent="." instance=ExtResource("9_xr3op")]
-visible = false
-layout_mode = 1
-
-[node name="OptionsMenu" parent="." instance=ExtResource("10_8vsfm")]
-visible = false
-layout_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_options_pressed"]

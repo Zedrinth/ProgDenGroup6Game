@@ -14,7 +14,6 @@
 texture = ExtResource("5_sm7ww")
 
 [node name="OptionsMenu" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,17 +24,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j4fp5")
 
-[node name="StarlitSky" type="Sprite2D" parent="."]
-position = Vector2(0, -52)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StarlitSky" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 272)
 scale = Vector2(2.11765, 1)
 texture = ExtResource("2_n701f")
 
-[node name="Mountains" type="Sprite2D" parent="."]
+[node name="Mountains" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 324)
 scale = Vector2(2.11765, 1.55769)
 texture = ExtResource("3_5wr7h")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -49,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Master" type="Label" parent="VBoxContainer"]
+[node name="Master" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
@@ -63,10 +64,10 @@ text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MasterVol" parent="VBoxContainer" instance=ExtResource("6_agiyx")]
+[node name="MasterVol" parent="CanvasLayer/VBoxContainer" instance=ExtResource("6_agiyx")]
 layout_mode = 2
 
-[node name="Sound" type="Label" parent="VBoxContainer"]
+[node name="Sound" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
@@ -80,11 +81,11 @@ text = "Sound Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SoundVol" parent="VBoxContainer" instance=ExtResource("6_agiyx")]
+[node name="SoundVol" parent="CanvasLayer/VBoxContainer" instance=ExtResource("6_agiyx")]
 layout_mode = 2
 script = ExtResource("7_6ckwv")
 
-[node name="Music" type="Label" parent="VBoxContainer"]
+[node name="Music" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.223529, 0.647059, 0.203922, 1)
@@ -98,11 +99,11 @@ text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicVol" parent="VBoxContainer" instance=ExtResource("6_agiyx")]
+[node name="MusicVol" parent="CanvasLayer/VBoxContainer" instance=ExtResource("6_agiyx")]
 layout_mode = 2
 script = ExtResource("8_ihceu")
 
-[node name="Back" type="Button" parent="VBoxContainer"]
+[node name="Back" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_vnjh4")
@@ -113,8 +114,7 @@ theme_override_fonts/font = ExtResource("5_cej6g")
 theme_override_font_sizes/font_size = 80
 text = "Back"
 
-[connection signal="value_changed" from="VBoxContainer/MasterVol" to="VBoxContainer/MasterVol" method="_on_master_vol_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/SoundVol" to="VBoxContainer/SoundVol" method="_on_sound_vol_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/MusicVol" to="VBoxContainer/MusicVol" method="_on_music_vol_value_changed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/MasterVol" to="CanvasLayer/VBoxContainer/MasterVol" method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/SoundVol" to="CanvasLayer/VBoxContainer/SoundVol" method="_on_sound_vol_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/MusicVol" to="CanvasLayer/VBoxContainer/MusicVol" method="_on_music_vol_value_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Back" to="." method="_on_back_pressed"]

@@ -17,17 +17,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_10170")
 
-[node name="StarlitSky" type="Sprite2D" parent="."]
-position = Vector2(0, -52)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StarlitSky" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 272)
 scale = Vector2(2.11765, 1)
 texture = ExtResource("2_xeasd")
 
-[node name="Mountains" type="Sprite2D" parent="."]
+[node name="Mountains" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 324)
 scale = Vector2(2.11765, 1.55769)
 texture = ExtResource("3_n5kog")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -41,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Level1" type="Button" parent="VBoxContainer"]
+[node name="Level1" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
@@ -52,7 +54,7 @@ theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Level 1"
 
-[node name="Level2" type="Button" parent="VBoxContainer"]
+[node name="Level2" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
@@ -63,7 +65,7 @@ theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Level 2"
 
-[node name="Back" type="Button" parent="VBoxContainer"]
+[node name="Back" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_lgbdw")
@@ -74,8 +76,8 @@ theme_override_fonts/font = ExtResource("5_hiwyq")
 theme_override_font_sizes/font_size = 80
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Level1" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Level2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Back" to="." method="_on_back_pressed"]

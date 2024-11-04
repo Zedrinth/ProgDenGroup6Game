@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvucbil3g3kve"]
+
+[ext_resource type="Script" path="res://Scripts/canon.gd" id="1_j84ye"]
+[ext_resource type="Texture2D" uid="uid://ddxsx31s5464s" path="res://Assets/GameSprites/cannon gun/11.png" id="2_ovd0h"]
+
+[node name="cannon" type="Node2D"]
+
+[node name="Canon" type="Node2D" parent="."]
+script = ExtResource("1_j84ye")
+
+[node name="Sprite2D" type="Sprite2D" parent="Canon"]
+texture_filter = 1
+position = Vector2(0.0328172, -0.00733773)
+rotation = 1.5708
+scale = Vector2(0.939711, 0.569685)
+texture = ExtResource("2_ovd0h")
+region_enabled = true
+region_rect = Rect2(3.03331, 1.88872, 17.0099, 28.299)
+
+[node name="Cooldown" type="Timer" parent="Canon"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Canon/Cooldown" to="Canon" method="_on_cooldown_timeout"]
