@@ -9098,6 +9098,7 @@ position = Vector2(568, -408)
 [node name="Hitboxsmol48" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(584, -424)
 
+
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_1_tree_entered"]
 [connection signal="tree_entered" from="CanvasLayer/HUD" to="." method="_on_hud_tree_entered"]
 [connection signal="key_collected" from="Node/key" to="CanvasLayer/HUD" method="_on_key_key_collected"]
