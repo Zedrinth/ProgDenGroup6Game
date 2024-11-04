@@ -8697,14 +8697,8 @@ position = Vector2(824, -424)
 [node name="cannon4" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
 position = Vector2(776, -312)
 
-[node name="cannon5" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
-position = Vector2(616, -312)
-
 [node name="cannon6" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
 position = Vector2(536, -312)
-
-[node name="cannon7" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
-position = Vector2(696, -312)
 
 [node name="cannon8" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
 position = Vector2(896, -312)
