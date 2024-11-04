@@ -15,7 +15,13 @@ var can_dash = true
 @onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
-var Knockback = Vector2.ZERO
+var noise_i: float = 0.0
+var shake_strength: float = 0.0
+@export var RANDOM_SHAKE_STRENGTH: float = 30.0
+@export var SHAKE_DECAY_RATE: float = 5.0
+@export var NOISE_SHAKE_SPEED: float = 30.0
+@export var NOISE_SHAKE_STRENGTH: float = 60.0
+@export var KnockbackPower: int = 1500
 
 
 func _ready():
@@ -27,6 +33,7 @@ func take_damage():
 		iframes()
 		Global.current_health -= 1
 		sfx_hit.play()
+		knockback()
 		Global.hit.emit()
 		if Global.current_health <= 0:
 			Global.previous_screen = get_tree().current_scene.scene_file_path
@@ -37,8 +44,10 @@ func take_damage():
 
 func iframes():
 	can_take_damage = false
-	await get_tree().create_timer(0.25).timeout
+	$AnimatedSprite2D.play("Dmged")
+	await get_tree().create_timer(5).timeout
 	can_take_damage = true
+	
 
 #Movement
 func _physics_process(delta):
@@ -94,6 +103,11 @@ func _physics_process(delta):
 
 func die():
 	GameManager.respawn_player()
+
+func knockback():
+	var knockbackDirection = -velocity.normalized() * KnockbackPower
+	velocity = knockbackDirection
+	move_and_slide()
 
 func Cayote_Timeout():
 	Jump_Available = false

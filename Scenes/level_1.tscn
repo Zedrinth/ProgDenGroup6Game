@@ -8738,19 +8738,15 @@ position = Vector2(504, -40)
 position = Vector2(520, -56)
 
 [node name="Hitboxsmol23" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(381, -239)
+position = Vector2(377, -239)
 
 [node name="Hitboxsmol24" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(375, -246)
+position = Vector2(374, -244)
 rotation = 0.523598
 
 [node name="Hitboxsmol42" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(393, -329)
 rotation = 0.261799
-
-[node name="Hitboxsmol43" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(394, -343)
-rotation = 0.523598
 
 [node name="Hitboxsmol44" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(401, -344)

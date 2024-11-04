@@ -20,7 +20,6 @@ func _on_restart_pressed():
 	get_tree().reload_current_scene()
 
 
-
 func _on_quit_to_menu_pressed():
 	get_tree().paused = false
 	MusicManager.lv1bgm.stop()
