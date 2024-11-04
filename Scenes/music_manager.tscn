@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvvb0rbaavw55"]
+[gd_scene load_steps=7 format=3 uid="uid://bvvb0rbaavw55"]
 
 [ext_resource type="Script" path="res://Music/music_manager.gd" id="1_46wnl"]
 [ext_resource type="AudioStream" uid="uid://c8a8hl58s77ff" path="res://Music/Dark Souls III - 8-Bit Revision.mp3" id="2_3uvou"]
 [ext_resource type="AudioStream" uid="uid://wp1goaafwtu" path="res://Music/[8-Bit] American Football - Never Meant.mp3" id="2_jsugr"]
 [ext_resource type="AudioStream" uid="uid://ci4eo03uw574m" path="res://Music/HoloCure OST - Koyoi wa Halloween Night! (Extended Loop).mp3" id="3_4oowr"]
 [ext_resource type="AudioStream" uid="uid://7nylrurxqh50" path="res://Music/8-bit RPG Music | Victory Theme.mp3" id="5_0xdnt"]
+[ext_resource type="AudioStream" uid="uid://cm1egji81bthe" path="res://Music/Undertale OST: 011 - Determination.mp3" id="6_83ecm"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_46wnl")
@@ -33,5 +34,6 @@ bus = &"music"
 parameters/looping = true
 
 [node name="DeathBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_83ecm")
 volume_db = -10.0
 bus = &"music"
