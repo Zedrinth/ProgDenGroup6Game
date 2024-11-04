@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdc3a1oojckbl"
+path="res://.godot/imported/Spooky Scary Skeletons 8 bit.mp3-3b9065c13279b43937c42a7a9ec0766c.mp3str"
+
+[deps]
+
+source_file="res://Music/Spooky Scary Skeletons 8 bit.mp3"
+dest_files=["res://.godot/imported/Spooky Scary Skeletons 8 bit.mp3-3b9065c13279b43937c42a7a9ec0766c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
