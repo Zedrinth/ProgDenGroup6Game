@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=42 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -8654,6 +8654,20 @@ sources/11 = SubResource("TileSetAtlasSource_wmcqs")
 sources/12 = SubResource("TileSetAtlasSource_3slvf")
 sources/14 = SubResource("TileSetAtlasSource_iv3yo")
 
+[sub_resource type="GDScript" id="GDScript_5moir"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Level1" type="Node2D"]
 process_mode = 1
 texture_filter = 1
@@ -8692,6 +8706,7 @@ limit_right = 1120
 limit_bottom = 32
 limit_smoothed = true
 editor_draw_limits = true
+script = SubResource("GDScript_5moir")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -8915,7 +8930,7 @@ position = Vector2(776, -360)
 position = Vector2(792, -360)
 
 [node name="Snail" parent="." instance=ExtResource("24_rnkex")]
-position = Vector2(616, -256)
+position = Vector2(616, -255)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("25_duym4")]
 position = Vector2(496, -264)
