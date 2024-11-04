@@ -9008,10 +9008,10 @@ position = Vector2(712, -24)
 position = Vector2(728, -24)
 
 [node name="Hitboxsmol23" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(384, -240)
+position = Vector2(381, -240)
 
 [node name="Hitboxsmol24" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(376, -248)
+position = Vector2(374, -248)
 
 [node name="Hitboxsmol25" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(360, -248)
@@ -9065,7 +9065,13 @@ position = Vector2(248, -304)
 position = Vector2(392, -328)
 
 [node name="Hitboxsmol42" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(392, -344)
+position = Vector2(400, -344)
+
+[node name="Hitboxsmol49" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
+position = Vector2(395, -341)
+
+[node name="Hitboxsmol50" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
+position = Vector2(392, -334)
 
 [node name="Hitboxsmol43" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(488, -360)
