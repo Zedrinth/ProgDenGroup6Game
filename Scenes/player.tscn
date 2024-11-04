@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ddah82uvi8012"]
+[gd_scene load_steps=45 format=3 uid="uid://ddah82uvi8012"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_th3g3"]
 [ext_resource type="Texture2D" uid="uid://dy2wh0c4h3ycx" path="res://Character Sprites/Plant_Dash - Copy (2).png" id="2_lrpe7"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://brx4vy8d017c0" path="res://Character Sprites/Attack/Plant_Attack4 - Copy.png" id="9_ytd8f"]
 [ext_resource type="AudioStream" uid="uid://2ixvoic244oq" path="res://Character Sprites/Fx/Jum_sfx.mp3" id="11_hrly0"]
 [ext_resource type="AudioStream" uid="uid://bg1c8nwtddpyq" path="res://Character Sprites/Fx/Dash_sfx.mp3" id="12_u87q0"]
+[ext_resource type="AudioStream" uid="uid://d23punu1lvhgn" path="res://Character Sprites/Fx/Hit_sfx.mp3" id="14_8ujqt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dxgm"]
 atlas = ExtResource("2_lrpe7")
@@ -269,9 +270,9 @@ texture_filter = 1
 position = Vector2(-9.53674e-07, -15)
 scale = Vector2(0.941176, 1.16)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
-animation = &"Idle"
+animation = &"Dmged"
 autoplay = "Idle"
-frame_progress = 0.845843
+frame_progress = 0.957859
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
@@ -295,6 +296,9 @@ bus = &"sound"
 [node name="SFx_Dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_u87q0")
 bus = &"sound"
+
+[node name="SFx_Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_8ujqt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

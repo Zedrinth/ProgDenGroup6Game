@@ -12,8 +12,11 @@ var dashing = false
 var can_dash = true
 @onready var sfx_jump: AudioStreamPlayer2D = $sFx_Jump
 @onready var sfx_dash: AudioStreamPlayer2D = $SFx_Dash
+@onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
+var Knockback = Vector2.ZERO
+
 
 func _ready():
 	Global.current_health = 3
@@ -23,9 +26,8 @@ func take_damage():
 	if can_take_damage:
 		iframes()
 		Global.current_health -= 1
+		sfx_hit.play()
 		Global.hit.emit()
-		$AnimatedSprite2D.play("Dmged")
-		move_and_collide(Knockback*get_process_delta_time()*50)
 		if Global.current_health <= 0:
 			Global.previous_screen = get_tree().current_scene.scene_file_path
 			print(Global.previous_screen)
