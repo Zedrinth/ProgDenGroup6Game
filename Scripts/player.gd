@@ -25,7 +25,7 @@ var shake_strength: float = 0.0
 
 
 func _ready():
-	Global.current_health = 3
+	Global.current_health = 30
 	GameManager.player = self
 
 func take_damage():
