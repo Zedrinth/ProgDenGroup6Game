@@ -22,5 +22,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		print("hit")
 		body.take_damage()
-		body.die()
 	queue_free()
