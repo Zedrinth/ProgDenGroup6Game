@@ -19,5 +19,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("hit")
+	if body is Player:
+		print("hit")
+		body.take_damage()
+		body.die()
 	queue_free()

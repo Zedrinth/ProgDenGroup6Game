@@ -16,7 +16,7 @@ func shoot():
 	instance.spawnPos = global_position
 	instance.spawnRot = rotation
 	instance.zdex = z_index
-	main.add_child(instance)
+	self.add_child(instance)
 	
 
 func _on_cooldown_timeout() -> void:
