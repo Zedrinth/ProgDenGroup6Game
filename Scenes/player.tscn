@@ -1,14 +1,17 @@
-[gd_scene load_steps=27 format=3 uid="uid://ddah82uvi8012"]
+[gd_scene load_steps=38 format=3 uid="uid://ddah82uvi8012"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_th3g3"]
 [ext_resource type="Texture2D" uid="uid://dy2wh0c4h3ycx" path="res://Character Sprites/Plant_Dash - Copy (2).png" id="2_lrpe7"]
 [ext_resource type="Texture2D" uid="uid://duw8ca33pmicu" path="res://Character Sprites/Plant_Idle Co.png" id="3_2vnxs"]
+[ext_resource type="Texture2D" uid="uid://bo1wkxhdhuhf6" path="res://Character Sprites/Plant_Hit.png" id="3_eau71"]
 [ext_resource type="Texture2D" uid="uid://cyr8t5ag72haf" path="res://Character Sprites/Plant_Jumping-export.png" id="4_v5u4p"]
 [ext_resource type="Texture2D" uid="uid://buk2j5uehujde" path="res://Character Sprites/Plant_Walk.png" id="5_krbtq"]
 [ext_resource type="Texture2D" uid="uid://bs6yupybhi4kw" path="res://Character Sprites/Attack/Plant_Attack - Copy.png" id="6_df885"]
 [ext_resource type="Texture2D" uid="uid://8qb2k1wjvv7l" path="res://Character Sprites/Attack/Plant_Attack2 - Copy.png" id="7_twewk"]
 [ext_resource type="Texture2D" uid="uid://mv1pmgfroc2u" path="res://Character Sprites/Attack/Plant_Attack3 - Copy.png" id="8_60wna"]
 [ext_resource type="Texture2D" uid="uid://brx4vy8d017c0" path="res://Character Sprites/Attack/Plant_Attack4 - Copy.png" id="9_ytd8f"]
+[ext_resource type="AudioStream" uid="uid://2ixvoic244oq" path="res://Character Sprites/Fx/Jum_sfx.mp3" id="11_hrly0"]
+[ext_resource type="AudioStream" uid="uid://bg1c8nwtddpyq" path="res://Character Sprites/Fx/Dash_sfx.mp3" id="12_u87q0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nww38"]
 radius = 5.0
@@ -33,6 +36,22 @@ region = Rect2(17, 0, 17, 25)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q1wo"]
 atlas = ExtResource("2_lrpe7")
 region = Rect2(0, 0, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttek1"]
+atlas = ExtResource("3_eau71")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynleo"]
+atlas = ExtResource("3_eau71")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik6fq"]
+atlas = ExtResource("3_eau71")
+region = Rect2(32, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piwuc"]
+atlas = ExtResource("3_eau71")
+region = Rect2(48, 0, 16, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkxui"]
 atlas = ExtResource("3_2vnxs")
@@ -107,6 +126,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"Dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttek1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynleo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik6fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piwuc")
+}],
+"loop": true,
+"name": &"Dmged",
 "speed": 5.0
 }, {
 "frames": [{
@@ -204,15 +240,22 @@ texture_filter = 1
 position = Vector2(1.20371e-35, -15.08)
 scale = Vector2(0.941176, 1.16)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
-animation = &"Walking"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.449355
+frame_progress = 0.845843
 
 [node name="dash_again_timer" type="Timer" parent="."]
 wait_time = 0.6
 
 [node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="sFx_Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_hrly0")
+volume_db = -7.0
+
+[node name="SFx_Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_u87q0")
 
 [connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

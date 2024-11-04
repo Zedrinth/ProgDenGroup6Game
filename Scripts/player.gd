@@ -10,7 +10,8 @@ var Jump_Available: bool = true
 const DASH_SPEED = 400.0
 var dashing = false
 var can_dash = true
-
+@onready var sfx_jump: AudioStreamPlayer2D = $sFx_Jump
+@onready var sfx_dash: AudioStreamPlayer2D = $SFx_Dash
 func _ready():
 	GameManager.player = self
 
@@ -25,6 +26,7 @@ func _physics_process(delta):
 		$dash_timer.start()
 		$dash_again_timer.start()
 		$AnimatedSprite2D.play("Dash")
+		sfx_dash.play()
 		
 	if direction:
 		if dashing:
@@ -50,6 +52,8 @@ func _physics_process(delta):
 		velocity.y -= JUMP_VELOCITY
 		Jump_Available = false
 		$AnimatedSprite2D.play("Jumping")
+		sfx_jump.play()
+		
 	#Gravity
 	if not is_on_floor():
 		if Jump_Available:

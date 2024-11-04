@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtl7ryrynjsw1"
-path="res://.godot/imported/Plant_Attack3 - Copy.png-fa671e415b229275baf3ea6eeb454057.ctex"
+uid="uid://bjo5tddbv5w3"
+path="res://.godot/imported/Plant_Hit.png-bfe18e0f3f41750141e44f7bd5576b20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Sprites/Plant_Attack3 - Copy.png"
-dest_files=["res://.godot/imported/Plant_Attack3 - Copy.png-fa671e415b229275baf3ea6eeb454057.ctex"]
+source_file="res://Character Sprites/Attack/Plant_Hit.png"
+dest_files=["res://.godot/imported/Plant_Hit.png-bfe18e0f3f41750141e44f7bd5576b20.ctex"]
 
 [params]
 
