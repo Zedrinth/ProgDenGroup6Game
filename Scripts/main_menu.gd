@@ -4,7 +4,6 @@ func _ready():
 	MusicManager.lv1bgm.stop()
 	MusicManager.lv2bgm.stop()
 	MusicManager.mmbgm.play() 
-	get_tree().paused = false
 
 
 func _on_play_pressed() -> void:

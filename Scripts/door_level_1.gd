@@ -14,7 +14,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		TransitionScreen.transitionToBlack()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
-		MusicManager.lv1bgm.stop()
+		
 
 func _on_body_entered(body: Node2D) -> void:
 	isOverDoor = true

@@ -10,10 +10,6 @@ var Jump_Available: bool = true
 const DASH_SPEED = 400.0
 var dashing = false
 var can_dash = true
-
-func _ready():
-	GameManager.player = self
-
 #Movement
 func _physics_process(delta):
 	
@@ -58,10 +54,7 @@ func _physics_process(delta):
 	else:
 		Jump_Available = true
 	move_and_slide()
-
-func die():
-	GameManager.respawn_player()
-
+	
 func Cayote_Timeout():
 	Jump_Available = false
 
