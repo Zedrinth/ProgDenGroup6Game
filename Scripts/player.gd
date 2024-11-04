@@ -21,7 +21,7 @@ var shake_strength: float = 0.0
 @export var SHAKE_DECAY_RATE: float = 5.0
 @export var NOISE_SHAKE_SPEED: float = 30.0
 @export var NOISE_SHAKE_STRENGTH: float = 60.0
-@export var KnockbackPower: int = 1500
+@export var KnockbackPower: int = 150
 
 
 func _ready():
@@ -45,7 +45,7 @@ func take_damage():
 func iframes():
 	can_take_damage = false
 	$AnimatedSprite2D.play("Dmged")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(.5).timeout
 	can_take_damage = true
 	
 
@@ -71,7 +71,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Walking")
 	else:
 		velocity.x = 0
-		if is_on_floor():
+		if is_on_floor:
 			$AnimatedSprite2D.play("Idle")
 	
 	
@@ -105,7 +105,7 @@ func die():
 	GameManager.respawn_player()
 
 func knockback():
-	var knockbackDirection = -velocity.normalized() * KnockbackPower
+	var knockbackDirection = -velocity.normalized() * KnockbackPower * 10
 	velocity = knockbackDirection
 	move_and_slide()
 

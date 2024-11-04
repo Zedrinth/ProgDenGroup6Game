@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dalhddtq6t2xc"]
+
+[ext_resource type="Script" path="res://Scenes/hitbox_hurt.gd" id="1_gkg6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6m4d"]
+size = Vector2(16, 16)
+
+[node name="HitboxHurt" type="Node2D"]
+script = ExtResource("1_gkg6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_r6m4d")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

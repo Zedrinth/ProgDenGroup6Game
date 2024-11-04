@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=39 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://detj4eo1yviu0" path="res://Scenes/key.tscn" id="20_akkgq"]
 [ext_resource type="PackedScene" uid="uid://bborceu6eqkox" path="res://Scenes/door_level_1.tscn" id="21_tityo"]
 [ext_resource type="PackedScene" uid="uid://jv0i5vm0j757" path="res://Scenes/HUD.tscn" id="22_vvg1r"]
+[ext_resource type="PackedScene" uid="uid://dalhddtq6t2xc" path="res://Scenes/hitbox_hurt.tscn" id="23_4et2n"]
 [ext_resource type="PackedScene" uid="uid://b08wic0wrtavk" path="res://Scenes/checkpoint.tscn" id="23_m2ifs"]
 [ext_resource type="PackedScene" uid="uid://7wtlo28bse33" path="res://Scenes/hitboxsmol.tscn" id="23_n73bd"]
 
@@ -1996,7 +1997,7 @@ texture = ExtResource("3_03ge2")
 46:18/0 = 0
 46:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.41942, 8, 4.41942, 4.24264, 8, 0.0883884, 8, 8)
 47:18/0 = 0
-47:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.39169, -6.71751, -0.0883884, -5.12653, -5.65686, -3.44715, -8, -1.94454, -6.0988, -1.06066, -1.5026, 0.618717, -2.2981, 2.65165, -2.38649, 3.09359, -4.41942, 3.8007, -4.24264, 5.12652, -2.12132, 8, 0.795495, 8, 8, -8, 8)
+47:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.875, -6.71751, -0.0883884, -5.12653, -5.65686, -3.44715, -8, -1.94454, -6.0988, -1.06066, -1.5026, 0.618717, -2.2981, 2.65165, -2.38649, 3.09359, -4.41942, 3.8007, -4.24264, 5.12652, -2.12132, 6.75, 2.375, 7, 8, -8, 8)
 48:18/0 = 0
 48:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.25, -2.625, 2.75, -2, 8, -8, 8)
 52:18/0 = 0
@@ -8741,82 +8742,35 @@ position = Vector2(520, -56)
 [node name="Hitboxsmol23" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(377, -239)
 
-[node name="Hitboxsmol24" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(374, -244)
-rotation = 0.523598
-
-[node name="Hitboxsmol42" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(393, -329)
-rotation = 0.261799
-
 [node name="Hitboxsmol44" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(401, -344)
-
-[node name="Hitboxsmol45" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(488, -360)
+position = Vector2(398, -344)
 
 [node name="Hitboxsmol46" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(504, -376)
 
-[node name="Hitboxsmol47" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(520, -360)
-
-[node name="Hitboxsmol48" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(552, -424)
-
-[node name="Hitboxsmol49" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(568, -408)
-
-[node name="Hitboxsmol50" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(584, -424)
-
-[node name="Hitboxsmol51" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(616, -360)
-
 [node name="Hitboxsmol52" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(632, -360)
-
-[node name="Hitboxsmol55" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(776, -360)
+position = Vector2(624, -360)
 
 [node name="Hitboxsmol57" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(744, -248)
-
-[node name="Hitboxsmol58" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(728, -248)
+position = Vector2(736, -248)
 
 [node name="Hitboxsmol59" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(664, -248)
-
-[node name="Hitboxsmol60" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(648, -248)
+position = Vector2(656, -248)
 
 [node name="Hitboxsmol61" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(584, -248)
-
-[node name="Hitboxsmol62" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(568, -248)
-
-[node name="Hitboxsmol63" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(568, -312)
+position = Vector2(576, -248)
 
 [node name="Hitboxsmol64" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(584, -312)
-
-[node name="Hitboxsmol65" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(648, -312)
+position = Vector2(575, -312)
 
 [node name="Hitboxsmol66" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(664, -312)
-
-[node name="Hitboxsmol67" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(728, -312)
+position = Vector2(656, -312)
 
 [node name="Hitboxsmol68" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(744, -312)
+position = Vector2(737, -312)
 
 [node name="Hitboxsmol56" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
-position = Vector2(792, -360)
+position = Vector2(785, -360)
 
 [node name="Hitboxsmol25" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(359, -246)
@@ -8931,6 +8885,83 @@ position = Vector2(248, -312)
 
 [node name="Hitboxsmol40" parent="HitboxGroup" instance=ExtResource("23_n73bd")]
 position = Vector2(248, -304)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="HitboxHurt" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(744, -248)
+
+[node name="HitboxHurt2" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(728, -248)
+
+[node name="HitboxHurt3" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(664, -248)
+
+[node name="HitboxHurt4" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(648, -248)
+
+[node name="HitboxHurt5" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(584, -248)
+
+[node name="HitboxHurt6" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(568, -248)
+
+[node name="HitboxHurt7" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(568, -312)
+
+[node name="HitboxHurt8" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(584, -312)
+
+[node name="HitboxHurt9" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(648, -312)
+
+[node name="HitboxHurt10" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(664, -312)
+
+[node name="HitboxHurt11" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(728, -312)
+
+[node name="HitboxHurt12" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(744, -312)
+
+[node name="HitboxHurt13" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(375, -245)
+rotation = 0.523599
+
+[node name="HitboxHurt14" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(394, -327)
+rotation = 0.523599
+
+[node name="HitboxHurt15" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(393, -341)
+rotation = 0.523599
+
+[node name="HitboxHurt16" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(488, -360)
+
+[node name="HitboxHurt17" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(520, -360)
+
+[node name="HitboxHurt18" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(552, -424)
+
+[node name="HitboxHurt19" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(568, -407)
+
+[node name="HitboxHurt20" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(584, -424)
+
+[node name="HitboxHurt21" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(616, -360)
+
+[node name="HitboxHurt22" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(632, -360)
+
+[node name="HitboxHurt23" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(776, -360)
+
+[node name="HitboxHurt24" parent="Node" instance=ExtResource("23_4et2n")]
+position = Vector2(792, -360)
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_1_tree_entered"]
 [connection signal="tree_entered" from="CanvasLayer/HUD" to="." method="_on_hud_tree_entered"]
