@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_xnak7"]
 [ext_resource type="Texture2D" uid="uid://cckf62h34aif7" path="res://Assets/Legacy Collection/Packs/Meta data assets files/Visuals/OBJECTS/items/key.png" id="2_gyy5o"]
-[ext_resource type="Texture2D" uid="uid://bsgska15k3kat" path="res://Character Sprites/hp_leaf.png" id="3_w5kmq"]
+[ext_resource type="Texture2D" uid="uid://bsgska15k3kat" path="res://Character Sprites/Leaf/hp_leaf.png" id="3_w5kmq"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af20w"]
 bg_color = Color(0, 0, 0, 0.227451)

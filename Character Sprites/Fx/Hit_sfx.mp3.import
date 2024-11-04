@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d23punu1lvhgn"
+path="res://.godot/imported/Hit_sfx.mp3-51d248950564210344e65dd364d00090.mp3str"
+
+[deps]
+
+source_file="res://Character Sprites/Fx/Hit_sfx.mp3"
+dest_files=["res://.godot/imported/Hit_sfx.mp3-51d248950564210344e65dd364d00090.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -12,8 +12,11 @@ var dashing = false
 var can_dash = true
 @onready var sfx_jump: AudioStreamPlayer2D = $sFx_Jump
 @onready var sfx_dash: AudioStreamPlayer2D = $SFx_Dash
+@onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
+var Knockback = Vector2.ZERO
+
 
 func _ready():
 	Global.current_health = 3
@@ -23,6 +26,7 @@ func take_damage():
 	if can_take_damage:
 		iframes()
 		Global.current_health -= 1
+		sfx_hit.play()
 		Global.hit.emit()
 		if Global.current_health <= 0:
 			Global.previous_screen = get_tree().current_scene.scene_file_path
@@ -61,6 +65,8 @@ func _physics_process(delta):
 		if is_on_floor():
 			$AnimatedSprite2D.play("Idle")
 	
+	
+	
 	#Rotation So I dont have to manualy edit the SPIRTE!!!
 	if direction == 1:
 		$AnimatedSprite2D.flip_h = false
@@ -75,6 +81,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("Jumping")
 		sfx_jump.play()
 		
+		
 	#Gravity
 	if not is_on_floor():
 		if Jump_Available:
@@ -84,6 +91,7 @@ func _physics_process(delta):
 		Jump_Available = true
 	move_and_slide()
 
+
 func die():
 	GameManager.respawn_player()
 
@@ -92,7 +100,6 @@ func Cayote_Timeout():
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
-
 
 func _on_dash_again_timer_timeout() -> void:
 	can_dash = true
