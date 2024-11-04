@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c8a3tmhksh4ax"]
+[gd_scene load_steps=39 format=4 uid="uid://c8a3tmhksh4ax"]
 
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_3ox78"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://7wtlo28bse33" path="res://Scenes/hitboxsmol.tscn" id="23_pgflg"]
 [ext_resource type="PackedScene" uid="uid://bvucbil3g3kve" path="res://Scenes/normalcanon.tscn" id="24_gt6aj"]
 [ext_resource type="PackedScene" uid="uid://dalhddtq6t2xc" path="res://Scenes/hitbox_hurt.tscn" id="24_j8xfs"]
+[ext_resource type="PackedScene" uid="uid://dr4w4go8pvgrt" path="res://Scenes/snail.tscn" id="25_hs4ev"]
+[ext_resource type="PackedScene" uid="uid://vs4xijxlx41v" path="res://Scenes/collisionwall.tscn" id="26_lf4n8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0do6r"]
 texture = ExtResource("2_o215i")
@@ -7409,6 +7411,47 @@ position = Vector2(1344, 157)
 
 [node name="HitboxHurt9" parent="HitboxHurt" instance=ExtResource("24_j8xfs")]
 position = Vector2(1360, 175)
+
+[node name="Snails" type="Node" parent="."]
+
+[node name="Snail2" parent="Snails" instance=ExtResource("25_hs4ev")]
+position = Vector2(1259, -67)
+
+[node name="StaticBody2D3" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(1216, -62)
+
+[node name="StaticBody2D4" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(1306, -61)
+
+[node name="Snail4" parent="Snails" instance=ExtResource("25_hs4ev")]
+position = Vector2(219, 541)
+
+[node name="StaticBody2D7" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(126, 545)
+
+[node name="StaticBody2D8" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(333, 547)
+
+[node name="StaticBody2D9" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(333, 547)
+
+[node name="Snail5" parent="Snails" instance=ExtResource("25_hs4ev")]
+position = Vector2(975, 541)
+
+[node name="StaticBody2D10" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(862, 546)
+
+[node name="StaticBody2D11" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(1106, 547)
+
+[node name="Snail6" parent="Snails" instance=ExtResource("25_hs4ev")]
+position = Vector2(1287, 381)
+
+[node name="StaticBody2D12" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(1181, 361)
+
+[node name="StaticBody2D13" parent="Snails" instance=ExtResource("26_lf4n8")]
+position = Vector2(1394, 358)
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_2_tree_entered"]
 [connection signal="key_collected" from="KeyGroup/key" to="CanvasLayer/HUD" method="_on_key_key_collected"]
