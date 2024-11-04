@@ -7091,40 +7091,40 @@ position = Vector2(248, 192)
 position = Vector2(288, 192)
 
 [node name="Hitbox31" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(160, 384)
+position = Vector2(160, 388)
 
 [node name="Hitbox32" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(200, 384)
+position = Vector2(200, 389)
 
 [node name="Hitbox33" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(248, 384)
+position = Vector2(248, 389)
 
 [node name="Hitbox34" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(288, 384)
+position = Vector2(288, 389)
 
 [node name="Hitbox35" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(592, 544)
+position = Vector2(592, 547)
 
 [node name="Hitbox36" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(640, 544)
+position = Vector2(640, 547)
 
 [node name="Hitbox39" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1216, 512)
+position = Vector2(1216, 515)
 
 [node name="Hitbox40" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1264, 512)
+position = Vector2(1264, 515)
 
 [node name="Hitbox41" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1360, 512)
+position = Vector2(1360, 515)
 
 [node name="Hitbox42" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1408, 512)
+position = Vector2(1408, 515)
 
 [node name="Hitbox43" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1488, 512)
+position = Vector2(1488, 515)
 
 [node name="Hitbox44" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(1536, 512)
+position = Vector2(1536, 515)
 
 [node name="Hitbox45" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
 position = Vector2(1504, 384)
@@ -7142,7 +7142,7 @@ position = Vector2(1664, 384)
 position = Vector2(1584, 384)
 
 [node name="Hitbox37" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
-position = Vector2(688, 544)
+position = Vector2(688, 547)
 
 [node name="Hitbox38" parent="HitboxGroup" instance=ExtResource("21_2rjan")]
 position = Vector2(368, 672)

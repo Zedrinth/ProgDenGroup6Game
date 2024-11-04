@@ -6,8 +6,6 @@ class_name Checkpoint
 
 var activated = false
 
-	
-	
 func activate():
 	GameManager.current_checkpoint = self
 	activated = true
