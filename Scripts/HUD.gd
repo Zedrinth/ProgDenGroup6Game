@@ -1,8 +1,23 @@
 extends CanvasLayer
 
 
+func _ready() -> void:
+	$leaf.modulate = Color(1,1,1)
+	$leaf2.modulate = Color(1,1,1)
+	$leaf3.modulate = Color(1,1,1)
+	Global.hit.connect(hit)
+	var health = Global.current_health
 
-
+func hit():
+	if Global.current_health == 2:
+		$leaf3.modulate = 200
+	elif Global.current_health == 1:
+		$leaf2.modulate = 200
+	elif Global.current_health == 0:
+		$leaf.modulate = 200
+		
+		
+		
 
 func _on_key_key_collected() -> void:
 	$KeyHUD.modulate = Color(1,1,1)

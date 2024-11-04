@@ -17,17 +17,20 @@ var current_health: int = 3
 
 
 
+
 func take_damage():
-	if current_health > 0:
-		current_health -= 1
-		if current_health <= 0:
+	if Global.current_health > 0:
+		Global.current_health -= 1
+		Global.hit.emit()
+		if Global.current_health <= 0:
 			Global.previous_screen = get_tree().current_scene.scene_file_path
 			print(Global.previous_screen)
 			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 			print("game over")
-		print("current_health ",current_health)
+		print("current_health ",Global.current_health)
 
 func _ready():
+	Global.current_health = 3
 	GameManager.player = self
 
 #Movement
