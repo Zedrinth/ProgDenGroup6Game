@@ -8720,6 +8720,9 @@ position = Vector2(424, -136)
 [node name="Checkpoint3" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
 position = Vector2(784, -136)
 
+[node name="Checkpoint6" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
+position = Vector2(808, -248)
+
 [node name="Checkpoint4" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
 position = Vector2(456, -248)
 
