@@ -54,7 +54,8 @@ func _physics_process(delta):
 	else:
 		Jump_Available = true
 	move_and_slide()
-	
+
+
 func Cayote_Timeout():
 	Jump_Available = false
 

@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cyr8t5ag72haf" path="res://Character Sprites/Plant_Jumping-export.png" id="4_v5u4p"]
 [ext_resource type="Texture2D" uid="uid://buk2j5uehujde" path="res://Character Sprites/Plant_Walk.png" id="5_krbtq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8akh8"]
-size = Vector2(10, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnllv"]
+radius = 6.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dxgm"]
 atlas = ExtResource("2_lrpe7")
@@ -156,14 +157,19 @@ animations = [{
 "loop": true,
 "name": &"Walking",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_th3g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12.5)
-shape = SubResource("RectangleShape2D_8akh8")
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_cnllv")
 one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -173,7 +179,6 @@ scale = Vector2(0.941176, 1.05846)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
 animation = &"Dash"
 autoplay = "Idle"
-frame_progress = 0.802885
 
 [node name="dash_again_timer" type="Timer" parent="."]
 wait_time = 0.6
