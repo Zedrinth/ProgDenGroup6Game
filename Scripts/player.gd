@@ -12,7 +12,25 @@ var dashing = false
 var can_dash = true
 @onready var sfx_jump: AudioStreamPlayer2D = $sFx_Jump
 @onready var sfx_dash: AudioStreamPlayer2D = $SFx_Dash
+var current_health: int = 3
+
+
+
+
+
+func take_damage():
+	if Global.current_health > 0:
+		Global.current_health -= 1
+		Global.hit.emit()
+		if Global.current_health <= 0:
+			Global.previous_screen = get_tree().current_scene.scene_file_path
+			print(Global.previous_screen)
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+			print("game over")
+		print("current_health ",Global.current_health)
+
 func _ready():
+	Global.current_health = 3
 	GameManager.player = self
 
 #Movement
