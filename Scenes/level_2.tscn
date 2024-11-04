@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c8a3tmhksh4ax"]
+[gd_scene load_steps=36 format=4 uid="uid://c8a3tmhksh4ax"]
 
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_3ox78"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bx2dit36pbltd" path="res://Scenes/hitboxcp.tscn" id="21_2rjan"]
 [ext_resource type="PackedScene" uid="uid://b08wic0wrtavk" path="res://Scenes/checkpoint.tscn" id="23_jdfi5"]
 [ext_resource type="PackedScene" uid="uid://7wtlo28bse33" path="res://Scenes/hitboxsmol.tscn" id="23_pgflg"]
-[ext_resource type="PackedScene" uid="uid://yr8ch2pdadsa" path="res://Scenes/canon.tscn" id="23_qc8n8"]
 [ext_resource type="PackedScene" uid="uid://bvucbil3g3kve" path="res://Scenes/normalcanon.tscn" id="24_gt6aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0do6r"]
@@ -7334,79 +7333,52 @@ position = Vector2(1480, 216)
 [node name="Hitboxsmol10" parent="HitboxGroup" instance=ExtResource("23_pgflg")]
 position = Vector2(1008, 128)
 
-[node name="Inviscannons" type="Node" parent="."]
-
-[node name="inviscannon" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(288, 208)
-
-[node name="inviscannon2" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(632, 8)
-
-[node name="inviscannon3" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(800, 8)
-
-[node name="inviscannon4" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1048, 56)
-
-[node name="inviscannon5" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1192, 56)
-
-[node name="inviscannon6" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1336, 56)
-
-[node name="inviscannon7" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1480, 56)
-
-[node name="inviscannon8" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1576, 384)
-
-[node name="inviscannon9" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1672, 384)
-
-[node name="inviscannon10" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1512, 544)
-
-[node name="inviscannon11" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1384, 544)
-
-[node name="inviscannon12" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1240, 544)
-
-[node name="inviscannon13" parent="Inviscannons" instance=ExtResource("23_qc8n8")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(256, 392)
-
 [node name="DownCannonGroup" type="Node" parent="."]
 
 [node name="cannon" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
 position = Vector2(440, -144)
 
+[node name="cannon9" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(440, -144)
+
 [node name="cannon2" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
-position = Vector2(456, -144)
+position = Vector2(640, -144)
+
+[node name="cannon10" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(800, -144)
+
+[node name="cannon11" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(1048, -144)
+
+[node name="cannon12" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(1192, -144)
+
+[node name="cannon13" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(1344, -144)
+
+[node name="cannon14" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(1488, -144)
 
 [node name="cannon3" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
-position = Vector2(256, 448)
+position = Vector2(248, 448)
+
+[node name="cannon15" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(256, 256)
+
+[node name="cannon16" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(280, 48)
 
 [node name="cannon4" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
-position = Vector2(192, 448)
+position = Vector2(200, 448)
 
 [node name="cannon5" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
 position = Vector2(544, 384)
 
 [node name="cannon6" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
 position = Vector2(984, 384)
+
+[node name="cannon17" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
+position = Vector2(1672, 224)
 
 [node name="cannon7" parent="DownCannonGroup" instance=ExtResource("24_gt6aj")]
 position = Vector2(1096, 224)

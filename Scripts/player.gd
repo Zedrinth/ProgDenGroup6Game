@@ -13,10 +13,15 @@ var can_dash = true
 @onready var sfx_jump: AudioStreamPlayer2D = $sFx_Jump
 @onready var sfx_dash: AudioStreamPlayer2D = $SFx_Dash
 var current_health: int = 3
-var Knockback = Vector2.ZERO
+var can_take_damage = true
+
+func _ready():
+	Global.current_health = 3
+	GameManager.player = self
 
 func take_damage():
-	if Global.current_health > 0:
+	if can_take_damage:
+		iframes()
 		Global.current_health -= 1
 		Global.hit.emit()
 		$AnimatedSprite2D.play("Dmged")
@@ -28,10 +33,10 @@ func take_damage():
 			print("game over")
 		print("current_health ",Global.current_health)
 
-
-func _ready():
-	Global.current_health = 3
-	GameManager.player = self
+func iframes():
+	can_take_damage = false
+	await get_tree().create_timer(0.25).timeout
+	can_take_damage = true
 
 #Movement
 func _physics_process(delta):

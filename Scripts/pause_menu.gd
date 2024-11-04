@@ -3,14 +3,6 @@ extends Control
 func _ready():
 	$AnimationPlayer.play("RESET")
 
-#func resume():
-#	get_tree().paused = false
-	
-
-#func pause():
-#	get_tree().paused = true
-
-
 func escPause():
 	if Input.is_action_just_pressed("pause") and !get_tree().paused:
 		get_tree().paused = true
