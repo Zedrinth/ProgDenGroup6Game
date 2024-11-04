@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://0byn85js2337"]
+[gd_scene load_steps=8 format=3 uid="uid://dpjmmt23gspmv"]
 
 [ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_gb2l4"]
 [ext_resource type="Texture2D" uid="uid://bsr6a13qkf4fl" path="res://Assets/Legacy Collection/Packs/Gothicvania Church/SPRITES/fx/fireball/fireball-spritesheet/fireball.png" id="2_hutmf"]

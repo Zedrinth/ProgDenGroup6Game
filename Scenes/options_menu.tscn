@@ -116,5 +116,5 @@ text = "Back"
 [connection signal="value_changed" from="VBoxContainer/MasterVol" to="VBoxContainer/MasterVol" method="_on_master_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SoundVol" to="VBoxContainer/SoundVol" method="_on_sound_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicVol" to="VBoxContainer/MusicVol" method="_on_music_vol_value_changed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
