@@ -14,6 +14,7 @@
 texture = ExtResource("5_sm7ww")
 
 [node name="OptionsMenu" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

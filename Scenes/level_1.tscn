@@ -8638,6 +8638,7 @@ sources/14 = SubResource("TileSetAtlasSource_iv3yo")
 
 [node name="Level1" type="Node2D"]
 process_mode = 1
+texture_filter = 1
 script = ExtResource("1_k3m6b")
 
 [node name="Old-dark-castle-interior-background" type="Sprite2D" parent="."]

@@ -19,6 +19,7 @@ texture = ExtResource("3_rijm3")
 texture = ExtResource("4_t4wm8")
 
 [node name="VictoryScreen" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
