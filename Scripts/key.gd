@@ -2,7 +2,7 @@ extends Area2D
 
 signal key_collected
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	emit_signal("key_collected")
 	Global.keys = Global.keys + 1
 	print (Global.keys)
