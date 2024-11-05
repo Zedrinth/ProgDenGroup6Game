@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccvrw5brcyvgh"]
+
+[ext_resource type="Script" path="res://Scripts/hitbox.gd" id="1_mex5v"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5cy2r"]
+
+[node name="Spikes4USD" type="Node2D"]
+script = ExtResource("1_mex5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("PlaceholderTexture2D_5cy2r")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1256, -120)
+polygon = PackedVector2Array(1224, 104, 1224, 106, 1225, 112, 1227, 118, 1228, 120, 1229, 120, 1230, 118, 1233, 114, 1235, 116, 1236, 116, 1239, 111, 1240, 122, 1241, 128, 1243, 134, 1244, 136, 1245, 136, 1248, 130, 1251, 132, 1252, 132, 1255, 127, 1257, 128, 1259, 134, 1260, 136, 1261, 136, 1265, 130, 1267, 132, 1268, 132, 1271, 127, 1272, 127, 1273, 112, 1275, 118, 1276, 120, 1277, 120, 1280, 114, 1283, 116, 1284, 116, 1288, 111, 1288, 104)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
