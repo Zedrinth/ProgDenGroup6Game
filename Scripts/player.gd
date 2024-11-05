@@ -19,6 +19,7 @@ var can_take_damage = true
 
 
 func _ready():
+	Global.keys = 0
 	Global.current_health = 3
 	GameManager.player = self
 

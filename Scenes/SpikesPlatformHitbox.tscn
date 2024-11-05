@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0mdr8uihjeu5"]
+
+[ext_resource type="Script" path="res://Scripts/hitbox.gd" id="1_0mjo5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5cy2r"]
+
+[node name="SpikePlatformHitbox" type="Node2D"]
+script = ExtResource("1_0mjo5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("PlaceholderTexture2D_5cy2r")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-296, 280)
+polygon = PackedVector2Array(384, -240, 384, -247, 381, -250, 380, -252, 379, -252, 378, -250, 376, -250, 375, -249, 374, -254, 373, -256, 372, -256, 371, -254, 369, -248, 367, -247, 365, -250, 364, -252, 363, -252, 362, -250, 360, -250, 359, -249, 358, -254, 357, -256, 356, -256, 355, -254, 353, -248, 351, -247, 349, -250, 348, -252, 347, -252, 346, -250, 344, -250, 343, -249, 342, -254, 341, -256, 340, -256, 339, -254, 337, -248, 335, -247, 333, -250, 332, -252, 331, -252, 330, -250, 328, -250, 326, -254, 325, -256, 326, -258, 327, -263, 328, -262, 331, -260, 332, -260, 333, -262, 335, -265, 336, -265, 336, -272, 288, -272, 288, -270, 289, -264, 288, -258, 286, -260, 284, -261, 280, -265, 272, -268, 262, -272, 254, -275, 248, -278, 242, -281, 230, -288, 229, -290, 237, -293, 238, -294, 239, -296, 249, -301, 256, -304, 256, -310, 256, -320, 208, -320, 208, -240)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

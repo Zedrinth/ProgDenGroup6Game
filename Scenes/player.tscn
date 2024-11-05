@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ddah82uvi8012"]
+[gd_scene load_steps=47 format=3 uid="uid://ddah82uvi8012"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_th3g3"]
 [ext_resource type="Texture2D" uid="uid://dy2wh0c4h3ycx" path="res://Character Sprites/Plant_Dash - Copy (2).png" id="2_lrpe7"]
@@ -281,14 +281,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wupm5"]
-radius = 4.0
-height = 14.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5eptd"]
-radius = 4.0
-height = 14.0
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_th3g3")
 
@@ -297,7 +289,7 @@ texture_filter = 1
 position = Vector2(-9.53674e-07, -15)
 scale = Vector2(0.941176, 1.16)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
-animation = &"Dmged"
+animation = &"Idle"
 autoplay = "Idle"
 frame = 1
 frame_progress = 0.733011
@@ -305,10 +297,9 @@ frame_progress = 0.733011
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
-[node name="hitbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -7)
-shape = SubResource("CapsuleShape2D_wupm5")
-debug_color = Color(0.972549, 0, 0, 0.419608)
+[node name="hurtbox" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(3, -14, 6, -13, 7, -9, 7, -5, 5, 0, 0, 0, -2, -5, -2, -9, -2, -9, -1, -13)
 
 [node name="dash_again_timer" type="Timer" parent="."]
 wait_time = 0.6
@@ -328,10 +319,9 @@ bus = &"sound"
 [node name="SFx_Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_8ujqt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-shape = SubResource("CapsuleShape2D_5eptd")
-one_way_collision_margin = 0.0
+[node name="hitbox" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(3, -14, 6, -13, 7, -9, 7, -5, 5, 0, 0, 0, -2, -5, -2, -9, -1, -13)
 
 [connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

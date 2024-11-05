@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://6uf5uorkxlsf"]
+
+[ext_resource type="Script" path="res://Scripts/hitbox.gd" id="1_s37fi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5cy2r"]
+
+[node name="SpikesBigEnd" type="Node2D"]
+script = ExtResource("1_s37fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("PlaceholderTexture2D_5cy2r")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1528, -232)
+polygon = PackedVector2Array(1581, 216, 1581, 220, 1580, 222, 1576, 223, 1572, 228, 1571, 228, 1568, 226, 1565, 232, 1564, 232, 1563, 230, 1562, 224, 1560, 239, 1556, 244, 1555, 244, 1552, 242, 1549, 248, 1548, 248, 1547, 246, 1543, 239, 1540, 244, 1539, 244, 1536, 242, 1533, 248, 1532, 248, 1531, 246, 1527, 239, 1524, 244, 1523, 244, 1520, 242, 1517, 248, 1516, 248, 1515, 246, 1511, 239, 1508, 244, 1507, 244, 1504, 242, 1501, 248, 1500, 248, 1499, 246, 1497, 240, 1496, 234, 1495, 223, 1492, 228, 1491, 228, 1488, 226, 1485, 232, 1484, 232, 1483, 230, 1481, 224, 1478, 221, 1477, 222, 1476, 222, 1475, 220, 1475, 216)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

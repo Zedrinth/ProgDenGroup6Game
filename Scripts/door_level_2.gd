@@ -12,7 +12,7 @@ var isLocked := true
 func _process(_delta: float) -> void:
 	if isOverDoor and Input.is_action_just_pressed("use") and !isLocked:
 		$AnimatedSprite2D.play("Opened")
-		$AnimationPlayer.play("RESET")
+		
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Opened":
@@ -27,6 +27,7 @@ func _on_body_entered(_body: Node2D) -> void:
 
  
 func _on_body_exited(_body: Node2D) -> void:
+	$AnimationPlayer.play("RESET")
 	isOverDoor = false
 
 
@@ -37,4 +38,6 @@ func _on_near_door_body_entered(_body: Node2D) -> void:
 		$AudioStreamPlayer.play()
 		isLocked = false
 		Global.keys = 0
+	if !isLocked:
+		$AnimationPlayer.play("vanish")
 		
