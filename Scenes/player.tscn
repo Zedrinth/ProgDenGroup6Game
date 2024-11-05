@@ -48,7 +48,7 @@ shader_parameter/particles_anim_v_frames = 1
 shader_parameter/particles_anim_loop = false
 
 [sub_resource type="Curve" id="Curve_cov12"]
-_data = [Vector2(0, 0.414085), 0.0, 0.0, 0, 0, Vector2(0.75, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.432394), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_qura1"]
@@ -57,8 +57,8 @@ curve = SubResource("Curve_cov12")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bht1"]
 gravity = Vector3(0, 0, 0)
 alpha_curve = SubResource("CurveTexture_qura1")
-anim_speed_min = 1.01
-anim_speed_max = 1.01
+anim_speed_min = 1.13
+anim_speed_max = 1.97
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dxgm"]
 atlas = ExtResource("2_lrpe7")
@@ -329,14 +329,16 @@ animations = [{
 script = ExtResource("1_th3g3")
 
 [node name="Dash_Animation" type="GPUParticles2D" parent="."]
+visible = false
 z_as_relative = false
 texture_filter = 1
 material = SubResource("ShaderMaterial_jq6g0")
-position = Vector2(0, -12)
-scale = Vector2(1.96478, 1.49553)
+position = Vector2(-1, -12)
+scale = Vector2(1.96478, 1.47536)
 process_material = SubResource("ParticleProcessMaterial_1bht1")
 texture = ExtResource("2_lrpe7")
-lifetime = 0.01
+trail_sections = 11
+trail_section_subdivisions = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -57,6 +57,7 @@ func _physics_process(delta):
 		$dash_again_timer.start()
 		$AnimatedSprite2D.play("Dash")
 		sfx_dash.play()
+		$Dash_Animation.visible = true
 	if direction:
 		if dashing:
 			velocity.x = direction * DASH_SPEED
