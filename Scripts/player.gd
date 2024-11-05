@@ -40,7 +40,6 @@ func take_damage():
 
 func iframes():
 	can_take_damage = false
-	$AnimatedSprite2D.play("Dmged")
 	await get_tree().create_timer(.5).timeout
 	can_take_damage = true
 	
@@ -95,7 +94,6 @@ func _physics_process(delta):
 	else:
 		Jump_Available = true
 	move_and_slide()
-
 
 func die():
 	GameManager.respawn_player()

@@ -7192,6 +7192,7 @@ position = Vector2(1192, 40)
 position = Vector2(1440, 40)
 
 [node name="Hitbox11" parent="LavaHitboxGroup" instance=ExtResource("29_2xayj")]
+process_mode = 3
 position = Vector2(1368, 512)
 
 [node name="Snails" type="Node" parent="."]

@@ -8639,24 +8639,15 @@ script = ExtResource("24_librq")
 position = Vector2(784, -360)
 script = ExtResource("24_librq")
 
-[node name="Node" type="Node" parent="."]
+[node name="ControlMessages" type="Node" parent="."]
 
-[node name="Snail" parent="." instance=ExtResource("24_rnkex")]
-position = Vector2(616, -255)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("25_duym4")]
-position = Vector2(496, -264)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("25_duym4")]
-position = Vector2(736, -264)
-
-[node name="Move" type="Panel" parent="."]
+[node name="Move" type="Panel" parent="ControlMessages"]
 offset_left = -32.0
 offset_top = -75.0
 offset_right = 14.0
 offset_bottom = -20.0
 
-[node name="Label" type="Label" parent="Move"]
+[node name="Label" type="Label" parent="ControlMessages/Move"]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 2.0
@@ -8666,7 +8657,7 @@ theme_override_font_sizes/font_size = 10
 text = "Use"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Move"]
+[node name="Label2" type="Label" parent="ControlMessages/Move"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 37.0
@@ -8676,23 +8667,23 @@ theme_override_font_sizes/font_size = 10
 text = "To Move"
 horizontal_alignment = 1
 
-[node name="AKeyLight" type="Sprite2D" parent="Move"]
+[node name="AKeyLight" type="Sprite2D" parent="ControlMessages/Move"]
 position = Vector2(15, 26)
 scale = Vector2(0.421053, 0.390244)
 texture = ExtResource("26_u1nd3")
 
-[node name="DLight" type="Sprite2D" parent="Move"]
+[node name="DLight" type="Sprite2D" parent="ControlMessages/Move"]
 position = Vector2(31, 26)
 scale = Vector2(0.421053, 0.390244)
 texture = ExtResource("27_xyu40")
 
-[node name="Jump" type="Panel" parent="."]
+[node name="Jump" type="Panel" parent="ControlMessages"]
 offset_left = 315.0
 offset_top = -102.0
 offset_right = 369.0
 offset_bottom = -60.0
 
-[node name="Label3" type="Label" parent="Jump"]
+[node name="Label3" type="Label" parent="ControlMessages/Jump"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
@@ -8701,18 +8692,18 @@ offset_bottom = 40.0
 theme_override_font_sizes/font_size = 10
 text = "To Jump"
 
-[node name="SpaceLight" type="Sprite2D" parent="Jump"]
+[node name="SpaceLight" type="Sprite2D" parent="ControlMessages/Jump"]
 position = Vector2(27, 12)
 scale = Vector2(0.222222, 0.390244)
 texture = ExtResource("30_4jc2o")
 
-[node name="Dash" type="Panel" parent="."]
+[node name="Dash" type="Panel" parent="ControlMessages"]
 offset_left = 213.0
 offset_top = -179.0
 offset_right = 267.0
 offset_bottom = -137.0
 
-[node name="Label3" type="Label" parent="Dash"]
+[node name="Label3" type="Label" parent="ControlMessages/Dash"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
@@ -8721,10 +8712,19 @@ offset_bottom = 40.0
 theme_override_font_sizes/font_size = 10
 text = "To Dash"
 
-[node name="ShiftLight" type="Sprite2D" parent="Dash"]
+[node name="ShiftLight" type="Sprite2D" parent="ControlMessages/Dash"]
 position = Vector2(27, 12)
 scale = Vector2(0.333333, 0.390244)
 texture = ExtResource("29_7npts")
+
+[node name="Snail" parent="." instance=ExtResource("24_rnkex")]
+position = Vector2(616, -255)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("25_duym4")]
+position = Vector2(496, -264)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("25_duym4")]
+position = Vector2(736, -264)
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_1_tree_entered"]
 [connection signal="tree_entered" from="CanvasLayer/HUD" to="." method="_on_hud_tree_entered"]
