@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bborceu6eqkox"]
+[gd_scene load_steps=15 format=3 uid="uid://bborceu6eqkox"]
 
 [ext_resource type="Texture2D" uid="uid://csp7p3ptps0yp" path="res://Assets/GameSprites/Characters/!$Gate1.png" id="1_hexd0"]
 [ext_resource type="Script" path="res://Scripts/door_level_1.gd" id="1_skjqh"]
 [ext_resource type="AudioStream" uid="uid://b3rbggrx2l8k6" path="res://Assets/Audio/DoorUnlock.mp3" id="3_8adsi"]
+[ext_resource type="Texture2D" uid="uid://cbcjenl8pbxrb" path="res://Assets/Mr. Breakfast's Free Prompts/png/e_light.png" id="4_o4uil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jup2"]
 size = Vector2(66, 66)
@@ -56,6 +57,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5n0b"]
 size = Vector2(123, 67)
 
+[sub_resource type="Animation" id="Animation_tqe5p"]
+resource_name = "vanish"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ELight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r4ti3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ELight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_grsfg"]
+_data = {
+"RESET": SubResource("Animation_r4ti3"),
+"vanish": SubResource("Animation_tqe5p")
+}
+
 [node name="Door" type="Area2D"]
 scale = Vector2(0.58809, 0.58809)
 script = ExtResource("1_skjqh")
@@ -78,6 +116,17 @@ shape = SubResource("RectangleShape2D_e5n0b")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8adsi")
 volume_db = 8.432
+
+[node name="ELight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -54.4134)
+scale = Vector2(0.715966, 0.663579)
+texture = ExtResource("4_o4uil")
+
+[node name="EnimationOne" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_grsfg")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

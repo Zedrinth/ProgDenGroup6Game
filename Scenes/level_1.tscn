@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=45 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://ciql3iumjo77r" path="res://Assets/Mr. Breakfast's Free Prompts/png/a_key_light.png" id="26_u1nd3"]
 [ext_resource type="Texture2D" uid="uid://dng2ha0lhbwg7" path="res://Assets/Mr. Breakfast's Free Prompts/png/d_light.png" id="27_xyu40"]
 [ext_resource type="Texture2D" uid="uid://blbdayuaapfr1" path="res://Assets/Mr. Breakfast's Free Prompts/png/shift_light.png" id="29_7npts"]
-[ext_resource type="Texture2D" uid="uid://cbcjenl8pbxrb" path="res://Assets/Mr. Breakfast's Free Prompts/png/e_light.png" id="30_2deji"]
 [ext_resource type="Texture2D" uid="uid://hxn16qmt10qt" path="res://Assets/Mr. Breakfast's Free Prompts/png/space_light.png" id="30_4jc2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccbj0"]
@@ -8935,6 +8934,7 @@ offset_right = 14.0
 offset_bottom = -20.0
 
 [node name="Label" type="Label" parent="Move"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 2.0
 offset_right = 33.0
@@ -8944,6 +8944,7 @@ text = "Use"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Move"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 37.0
 offset_right = 44.0
@@ -8969,6 +8970,7 @@ offset_right = 369.0
 offset_bottom = -60.0
 
 [node name="Label3" type="Label" parent="Jump"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
 offset_right = 47.0
@@ -8982,12 +8984,13 @@ scale = Vector2(0.222222, 0.390244)
 texture = ExtResource("30_4jc2o")
 
 [node name="Dash" type="Panel" parent="."]
-offset_left = 315.0
-offset_top = -188.0
-offset_right = 369.0
-offset_bottom = -146.0
+offset_left = 213.0
+offset_top = -179.0
+offset_right = 267.0
+offset_bottom = -137.0
 
 [node name="Label3" type="Label" parent="Dash"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
 offset_right = 47.0
@@ -8999,11 +9002,6 @@ text = "To Dash"
 position = Vector2(27, 12)
 scale = Vector2(0.333333, 0.390244)
 texture = ExtResource("29_7npts")
-
-[node name="ELight" type="Sprite2D" parent="."]
-position = Vector2(1096, -62)
-scale = Vector2(0.421053, 0.402439)
-texture = ExtResource("30_2deji")
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_1_tree_entered"]
 [connection signal="tree_entered" from="CanvasLayer/HUD" to="." method="_on_hud_tree_entered"]
