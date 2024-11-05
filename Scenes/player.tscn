@@ -299,6 +299,8 @@ scale = Vector2(0.941176, 1.16)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
 animation = &"Dmged"
 autoplay = "Idle"
+frame = 1
+frame_progress = 0.733011
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false

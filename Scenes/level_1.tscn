@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=47 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -8950,6 +8950,7 @@ offset_right = 14.0
 offset_bottom = -20.0
 
 [node name="Label" type="Label" parent="Move"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 2.0
 offset_right = 33.0
@@ -8959,6 +8960,7 @@ text = "Use"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Move"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 37.0
 offset_right = 44.0
@@ -8984,6 +8986,7 @@ offset_right = 369.0
 offset_bottom = -60.0
 
 [node name="Label3" type="Label" parent="Jump"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
 offset_right = 47.0
@@ -9003,6 +9006,7 @@ offset_right = 369.0
 offset_bottom = -146.0
 
 [node name="Label3" type="Label" parent="Dash"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 26.0
 offset_right = 47.0

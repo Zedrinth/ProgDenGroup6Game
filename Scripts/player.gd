@@ -15,12 +15,6 @@ var can_dash = true
 @onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
-var noise_i: float = 0.0
-var shake_strength: float = 0.0
-@export var RANDOM_SHAKE_STRENGTH: float = 30.0
-@export var SHAKE_DECAY_RATE: float = 5.0
-@export var NOISE_SHAKE_SPEED: float = 30.0
-@export var NOISE_SHAKE_STRENGTH: float = 60.0
 @export var KnockbackPower: int = 150
 
 
