@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c8a3tmhksh4ax"]
+[gd_scene load_steps=44 format=4 uid="uid://c8a3tmhksh4ax"]
 
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_3ox78"]
@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://bvucbil3g3kve" path="res://Scenes/normalcanon.tscn" id="24_gt6aj"]
 [ext_resource type="PackedScene" uid="uid://dr4w4go8pvgrt" path="res://Scenes/snail.tscn" id="25_hs4ev"]
 [ext_resource type="PackedScene" uid="uid://vs4xijxlx41v" path="res://Scenes/collisionwall.tscn" id="26_lf4n8"]
-[ext_resource type="Texture2D" uid="uid://cbcjenl8pbxrb" path="res://Assets/Mr. Breakfast's Free Prompts/png/e_light.png" id="27_2r1by"]
 [ext_resource type="PackedScene" uid="uid://bw4fgujwb31tw" path="res://Scenes/spikes4.tscn" id="28_juqhp"]
 [ext_resource type="PackedScene" uid="uid://mhatnqgljtdn" path="res://Scenes/hitbox18.tscn" id="29_1f8tx"]
 [ext_resource type="PackedScene" uid="uid://cnokmbv3ynuj6" path="res://Scenes/hitbox48.tscn" id="29_2xayj"]
@@ -7193,6 +7192,7 @@ position = Vector2(1192, 40)
 position = Vector2(1440, 40)
 
 [node name="Hitbox11" parent="LavaHitboxGroup" instance=ExtResource("29_2xayj")]
+process_mode = 3
 position = Vector2(1368, 512)
 
 [node name="Snails" type="Node" parent="."]
