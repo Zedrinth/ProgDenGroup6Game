@@ -38,6 +38,7 @@ func take_damage():
 		if Global.current_health <= 0:
 			Global.previous_screen = get_tree().current_scene.scene_file_path
 			print(Global.previous_screen)
+			#ignore error on line 42. Since it changes to another scene anyway, making the error null
 			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 			print("game over")
 		print("current_health ",Global.current_health)
