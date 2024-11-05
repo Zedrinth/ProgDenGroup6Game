@@ -25,6 +25,7 @@ var shake_strength: float = 0.0
 
 
 func _ready():
+	Global.keys = 0
 	Global.current_health = 3
 	GameManager.player = self
 
