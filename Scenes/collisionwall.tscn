@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://vs4xijxlx41v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjprg"]
-size = Vector2(20, 176)
+size = Vector2(20, 43.5)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 4
