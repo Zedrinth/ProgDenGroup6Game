@@ -7022,7 +7022,7 @@ tile_map_data = PackedByteArray("AAABAAAAAgAOAAkAAAAAAAAAAgANAAkAAAD//wAAAgAMAAk
 tile_set = SubResource("TileSet_7l5hk")
 
 [node name="Player" parent="." instance=ExtResource("1_baqm2")]
-position = Vector2(91, -73)
+position = Vector2(92, -73)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -7232,11 +7232,6 @@ position = Vector2(1182, 370)
 
 [node name="StaticBody2D13" parent="Snails" instance=ExtResource("26_lf4n8")]
 position = Vector2(1394, 371)
-
-[node name="ELight" type="Sprite2D" parent="."]
-position = Vector2(1756, 202)
-scale = Vector2(0.421053, 0.390244)
-texture = ExtResource("27_2r1by")
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_2_tree_entered"]
 [connection signal="key_collected" from="KeyGroup/key" to="CanvasLayer/HUD" method="_on_key_key_collected"]
