@@ -16,7 +16,7 @@ var can_dash = true
 var current_health: int = 3
 var can_take_damage = true
 @export var KnockbackPower: int = 150
-
+@onready var dash_animation: GPUParticles2D = $Dash_Animation
 
 func _ready():
 	Global.keys = 0
@@ -57,12 +57,13 @@ func _physics_process(delta):
 		$dash_again_timer.start()
 		$AnimatedSprite2D.play("Dash")
 		sfx_dash.play()
-		
 	if direction:
 		if dashing:
 			velocity.x = direction * DASH_SPEED
+			dash_animation.emitting = true
 		else:
 			velocity.x = direction * SPEED
+			dash_animation.emitting = false
 		if is_on_floor():
 			$AnimatedSprite2D.play("Walking")
 	else:
@@ -73,13 +74,11 @@ func _physics_process(delta):
 	
 	
 	#Rotation So I dont have to manualy edit the SPIRTE!!!
-	if direction == 1:
-		$AnimatedSprite2D.flip_h = false
-	elif direction == -1:
-		$AnimatedSprite2D.flip_h = true
-		
-	#Jumping
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = direction < 0
+		dash_animation.scale.x = -1 if direction < 0 else 1
 	
+	#Jumping
 	if Input.is_action_just_pressed("jump") and Jump_Available:
 		velocity.y -= JUMP_VELOCITY
 		Jump_Available = false
