@@ -29,7 +29,7 @@ func _ready():
 func take_damage():
 	if can_take_damage:
 		iframes()
-		#GameManager.hitstop()
+		GameManager.hitstop()
 		Global.current_health -= 0
 		sfx_hit.play()
 		knockback()

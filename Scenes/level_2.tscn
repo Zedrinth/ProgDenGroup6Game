@@ -7022,8 +7022,6 @@ tile_set = SubResource("TileSet_7l5hk")
 
 [node name="Player" parent="." instance=ExtResource("1_baqm2")]
 position = Vector2(92, -73)
-Cayote_Time = 0.1
-KnockbackPower = 500
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)

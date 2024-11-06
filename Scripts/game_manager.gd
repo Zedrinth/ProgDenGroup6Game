@@ -10,6 +10,6 @@ func respawn_player():
 		
 
 func hitstop():
-	Engine.time_scale = 0.1
+	Engine.time_scale = 0
 	await get_tree().create_timer(0.5, true, false, true).timeout
 	Engine.time_scale = 1
