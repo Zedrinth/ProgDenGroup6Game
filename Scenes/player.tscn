@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ddah82uvi8012"]
+[gd_scene load_steps=52 format=3 uid="uid://ddah82uvi8012"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_th3g3"]
 [ext_resource type="Texture2D" uid="uid://dy2wh0c4h3ycx" path="res://Character Sprites/Plant_Dash - Copy (2).png" id="2_lrpe7"]
@@ -15,6 +15,50 @@
 [ext_resource type="AudioStream" uid="uid://2ixvoic244oq" path="res://Character Sprites/Fx/Jum_sfx.mp3" id="11_hrly0"]
 [ext_resource type="AudioStream" uid="uid://bg1c8nwtddpyq" path="res://Character Sprites/Fx/Dash_sfx.mp3" id="12_u87q0"]
 [ext_resource type="AudioStream" uid="uid://d23punu1lvhgn" path="res://Character Sprites/Fx/Hit_sfx.mp3" id="14_8ujqt"]
+
+[sub_resource type="Shader" id="Shader_u4amx"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+uniform int particles_anim_h_frames;
+uniform int particles_anim_v_frames;
+uniform bool particles_anim_loop;
+
+void vertex() {
+	float h_frames = float(particles_anim_h_frames);
+	float v_frames = float(particles_anim_v_frames);
+	VERTEX.xy /= vec2(h_frames, v_frames);
+	float particle_total_frames = float(particles_anim_h_frames * particles_anim_v_frames);
+	float particle_frame = floor(INSTANCE_CUSTOM.z * float(particle_total_frames));
+	if (!particles_anim_loop) {
+		particle_frame = clamp(particle_frame, 0.0, particle_total_frames - 1.0);
+	} else {
+		particle_frame = mod(particle_frame, particle_total_frames);
+	}
+	vec2 scale_UV = UV / vec2(h_frames, v_frames);
+	UV = scale_UV + vec2(mod(particle_frame, h_frames) / h_frames, floor((particle_frame + 0.5) / h_frames) / v_frames);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq6g0"]
+shader = SubResource("Shader_u4amx")
+shader_parameter/particles_anim_h_frames = 2
+shader_parameter/particles_anim_v_frames = 1
+shader_parameter/particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_cov12"]
+_data = [Vector2(0, 0.432394), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qura1"]
+curve = SubResource("Curve_cov12")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bht1"]
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_qura1")
+anim_speed_min = 1.13
+anim_speed_max = 1.97
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dxgm"]
 atlas = ExtResource("2_lrpe7")
@@ -170,7 +214,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Dmged",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -282,14 +326,27 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+process_mode = 1
 script = ExtResource("1_th3g3")
+
+[node name="Dash_Animation" type="GPUParticles2D" parent="."]
+visible = false
+z_as_relative = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_jq6g0")
+position = Vector2(-1, -12)
+scale = Vector2(1.96478, 1.47536)
+process_material = SubResource("ParticleProcessMaterial_1bht1")
+texture = ExtResource("2_lrpe7")
+trail_sections = 11
+trail_section_subdivisions = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-9.53674e-07, -15)
 scale = Vector2(0.941176, 1.16)
 sprite_frames = SubResource("SpriteFrames_i0m5e")
-animation = &"Idle"
+animation = &"Dash"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -321,5 +378,7 @@ stream = ExtResource("14_8ujqt")
 position = Vector2(-2, 0)
 polygon = PackedVector2Array(3, -14, 6, -13, 7, -9, 7, -5, 5, 0, 0, 0, -2, -5, -2, -9, -1, -13)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

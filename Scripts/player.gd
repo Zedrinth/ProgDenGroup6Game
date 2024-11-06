@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
+
 const SPEED = 150.0
 const JUMP_VELOCITY = 255
 const GRAVITY = 700
@@ -15,14 +16,10 @@ var can_dash = true
 @onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
-var noise_i: float = 0.0
-var shake_strength: float = 0.0
-@export var RANDOM_SHAKE_STRENGTH: float = 30.0
-@export var SHAKE_DECAY_RATE: float = 5.0
-@export var NOISE_SHAKE_SPEED: float = 30.0
-@export var NOISE_SHAKE_STRENGTH: float = 60.0
-@export var KnockbackPower: int = 150
-
+@export var KnockbackPower: int = 500
+@onready var dash_animation: GPUParticles2D = $Dash_Animation
+signal animation_finished
+var n : int = 1
 
 func _ready():
 	Global.keys = 0
@@ -32,17 +29,14 @@ func _ready():
 func take_damage():
 	if can_take_damage:
 		iframes()
-		Global.current_health -= 1
+		GameManager.hitstop()
+		Global.current_health -= 0
 		sfx_hit.play()
 		knockback()
 		Global.hit.emit()
 		if Global.current_health <= 0:
-			Global.previous_screen = get_tree().current_scene.scene_file_path
-			print(Global.previous_screen)
-			#ignore error on line 42. Since it changes to another scene anyway, making the error null
-			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
-			print("game over")
-		print("current_health ",Global.current_health)
+			game_over()
+			
 
 func iframes():
 	can_take_damage = false
@@ -52,9 +46,9 @@ func iframes():
 
 #Movement
 func _physics_process(delta):
-	
-	var direction = Input.get_axis("moveLeft", "moveRight")
-	
+	if Global.hit:
+		print("hit")
+	var direction = Input.get_axis("moveLeft", "moveRight")		
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dashing = true
 		can_dash = false
@@ -62,12 +56,14 @@ func _physics_process(delta):
 		$dash_again_timer.start()
 		$AnimatedSprite2D.play("Dash")
 		sfx_dash.play()
-		
+		$Dash_Animation.visible = true
 	if direction:
 		if dashing:
 			velocity.x = direction * DASH_SPEED
+			dash_animation.emitting = true
 		else:
 			velocity.x = direction * SPEED
+			dash_animation.emitting = false
 		if is_on_floor():
 			$AnimatedSprite2D.play("Walking")
 	else:
@@ -78,13 +74,11 @@ func _physics_process(delta):
 	
 	
 	#Rotation So I dont have to manualy edit the SPIRTE!!!
-	if direction == 1:
-		$AnimatedSprite2D.flip_h = false
-	elif direction == -1:
-		$AnimatedSprite2D.flip_h = true
-		
-	#Jumping
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = direction < 0
+		dash_animation.scale.x = -1 if direction < 0 else 1
 	
+	#Jumping
 	if Input.is_action_just_pressed("jump") and Jump_Available:
 		velocity.y -= JUMP_VELOCITY
 		Jump_Available = false
@@ -101,11 +95,10 @@ func _physics_process(delta):
 		Jump_Available = true
 	move_and_slide()
 
-func die():
-	GameManager.respawn_player()
 
-func knockback():
-	var knockbackDirection = -velocity.normalized() * KnockbackPower * 10
+
+func knockback():	
+	var knockbackDirection = -velocity.normalized() * KnockbackPower
 	velocity = knockbackDirection
 	move_and_slide()
 
@@ -117,3 +110,12 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_dash_again_timer_timeout() -> void:
 	can_dash = true
+	
+func game_over():
+	Global.previous_screen = get_tree().current_scene.scene_file_path
+	print(Global.previous_screen)
+	#ignore error on line 42. Since it changes to another scene anyway, making the error null
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	print("game over")
+	print("current_health ",Global.current_health)
+	
