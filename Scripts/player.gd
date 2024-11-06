@@ -30,7 +30,7 @@ func take_damage():
 	if can_take_damage:
 		iframes()
 		GameManager.hitstop()
-		Global.current_health -= 0
+		Global.current_health -= 1
 		sfx_hit.play()
 		knockback()
 		Global.hit.emit()
@@ -40,7 +40,7 @@ func take_damage():
 
 func iframes():
 	can_take_damage = false
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	can_take_damage = true
 	
 

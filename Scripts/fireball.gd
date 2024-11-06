@@ -13,7 +13,7 @@ func _ready():
 	global_rotation = spawnRot
 	z_index = zdex
 	
-func _physics_process(delta: float) -> void:
+func _physics_process_(delta: float) -> void:
 	velocity = Vector2(0, -SPEED).rotated(dir)
 	move_and_slide()
 

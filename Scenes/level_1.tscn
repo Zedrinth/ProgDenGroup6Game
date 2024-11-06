@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=50 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://vs4xijxlx41v" path="res://Scenes/collisionwall.tscn" id="25_duym4"]
 [ext_resource type="PackedScene" uid="uid://cmlb4pnro7kwk" path="res://Scenes/spikes2.tscn" id="25_hdmm5"]
 [ext_resource type="Texture2D" uid="uid://ciql3iumjo77r" path="res://Assets/Mr. Breakfast's Free Prompts/png/a_key_light.png" id="26_u1nd3"]
+[ext_resource type="PackedScene" uid="uid://ddau4h1udgod5" path="res://Scenes/hitboxreallysmol.tscn" id="27_r2apm"]
 [ext_resource type="Texture2D" uid="uid://dng2ha0lhbwg7" path="res://Assets/Mr. Breakfast's Free Prompts/png/d_light.png" id="27_xyu40"]
 [ext_resource type="Texture2D" uid="uid://blbdayuaapfr1" path="res://Assets/Mr. Breakfast's Free Prompts/png/shift_light.png" id="29_7npts"]
 [ext_resource type="Texture2D" uid="uid://hxn16qmt10qt" path="res://Assets/Mr. Breakfast's Free Prompts/png/space_light.png" id="30_4jc2o"]
@@ -1967,8 +1968,11 @@ texture = ExtResource("3_03ge2")
 32:18/0 = 0
 33:18/0 = 0
 46:18/0 = 0
+46:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, -2.375, 2.5, -2.375, 2.25, 4.125, -2.875, 4.125)
 47:18/0 = 0
+47:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 8, -6.125, 0.0625, -3.875, -6.0625, 0.125, 0.0625, 3.625, -2.3125, 6.75, 2.0625, 6.5, 8)
 48:18/0 = 0
+48:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, -2.375, 2.5, -2.375, 2.25, 4.125, -2.875, 4.125)
 52:18/0 = 0
 53:18/0 = 0
 61:18/0 = 0
@@ -2806,7 +2810,9 @@ texture = ExtResource("3_03ge2")
 17:37/0 = 0
 16:37/0 = 0
 23:26/0 = 0
+23:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, -2.375, 2.5, -2.375, 2.25, 4.125, -2.875, 4.125)
 24:27/0 = 0
+24:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, -2.375, 2.5, -2.375, 2.25, 4.125, -2.875, 4.125)
 25:28/0 = 0
 25:28/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, -8, 8)
 25:27/0 = 0
@@ -2849,6 +2855,7 @@ texture = ExtResource("3_03ge2")
 45:11/0 = 0
 44:11/0 = 0
 43:11/0 = 0
+43:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 8, -6.125, 0.0625, -3.875, -6.0625, 0.125, 0.0625, 3.625, -2.3125, 6.75, 2.0625, 6.5, 8)
 42:10/0 = 0
 41:10/0 = 0
 41:11/0 = 0
@@ -2856,6 +2863,7 @@ texture = ExtResource("3_03ge2")
 46:12/0 = 0
 45:12/0 = 0
 44:12/0 = 0
+44:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 8, -6.125, 0.0625, -3.875, -6.0625, 0.125, 0.0625, 3.625, -2.3125, 6.75, 2.0625, 6.5, 8)
 60:17/0 = 0
 60:16/0 = 0
 59:15/0 = 0
@@ -8719,6 +8727,10 @@ texture = ExtResource("29_7npts")
 
 [node name="Snail" parent="." instance=ExtResource("24_rnkex")]
 position = Vector2(616, -255)
+
+[node name="Hitboxsmol2" parent="Snail" instance=ExtResource("27_r2apm")]
+position = Vector2(-6.10352e-05, 7.14287)
+scale = Vector2(1.42857, 1.42857)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("25_duym4")]
 position = Vector2(496, -264)

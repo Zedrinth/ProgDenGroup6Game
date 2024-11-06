@@ -7,7 +7,7 @@ func _ready() -> void:
 	$leaf3.modulate = Color(1,1,1)
 	var health = Global.current_health
 
-func hita():
+func hit():
 	if Global.current_health == 2:
 		$leaf3.modulate = 200
 	elif Global.current_health == 1:
