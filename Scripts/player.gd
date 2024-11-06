@@ -30,7 +30,7 @@ func take_damage():
 	if can_take_damage:
 		iframes()
 		GameManager.hitstop()
-		Global.current_health -= 0
+		Global.current_health -= 1
 		sfx_hit.play()
 		knockback()
 		Global.hit.emit()
@@ -51,9 +51,7 @@ func iframes():
 
 #Movement
 func _physics_process(delta):
-	if Global.hit:
-		print("hit")
-	var direction = Input.get_axis("moveLeft", "moveRight")		
+	var direction = Input.get_axis("moveLeft", "moveRight")
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dashing = true
 		can_dash = false
