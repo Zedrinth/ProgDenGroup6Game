@@ -35,4 +35,6 @@ func _on_near_door_body_entered(body: Node2D) -> void:
 		$AudioStreamPlayer.play()
 		isLocked = false
 		Global.keys = 0
+	if !isLocked:
+		$EnimationOne.play("vanish")
 		

@@ -8,7 +8,7 @@ func _ready() -> void:
 	Global.hit.connect(hit)
 	var health = Global.current_health
 
-func hit():
+func hita():
 	if Global.current_health == 2:
 		$leaf3.modulate = 200
 	elif Global.current_health == 1:
