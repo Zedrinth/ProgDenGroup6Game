@@ -35,11 +35,12 @@ func take_damage():
 		knockback()
 		Global.hit.emit()
 		$AnimatedSprite2D.play("Dmged")
-	else:
-		set_physics_process(true)
 		if Global.current_health <= 0:
 			game_over()
 			
+	else:
+		set_physics_process(true)
+	
 
 func iframes():
 	can_take_damage = false
