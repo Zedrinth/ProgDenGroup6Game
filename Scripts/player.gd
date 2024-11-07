@@ -100,7 +100,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
+# Find yourself bouncing when hitting enemies? It's not a bug, its a feature! Use it to save seconds for your speedrun!
 func knockback():	
 	var knockbackDirection = -velocity.normalized() * KnockbackPower
 	velocity = knockbackDirection
