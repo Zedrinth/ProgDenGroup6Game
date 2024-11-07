@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg7e8epmtrbyb"]
+[gd_scene load_steps=12 format=3 uid="uid://dg7e8epmtrbyb"]
 
 [ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_ov3fb"]
 [ext_resource type="Texture2D" uid="uid://uouqthytep2b" path="res://Assets/Legacy Collection/Environments/caverns-files-web/layers/back-walls.png" id="2_31fr1"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://cr5nyqtnpormu" path="res://Assets/Title.png" id="3_f8asi"]
 [ext_resource type="Texture2D" uid="uid://culja3fj7gbgo" path="res://Assets/PressedButton.png" id="4_gnqwt"]
 [ext_resource type="Texture2D" uid="uid://d4i5pc6yxdyjm" path="res://Assets/NormalButton.png" id="5_2o16o"]
+[ext_resource type="Texture2D" uid="uid://cb8boirrn4l2r" path="res://Assets/HoverButton.png" id="5_jdg7a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbmcq"]
 texture = ExtResource("3_f8asi")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5phj"]
+texture = ExtResource("5_jdg7a")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02f55"]
 texture = ExtResource("4_gnqwt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b8p12syv0ieom"]
+[gd_scene load_steps=51 format=4 uid="uid://b8p12syv0ieom"]
 
 [ext_resource type="Texture2D" uid="uid://bicfb7aa2v3hf" path="res://Assets/Legacy Collection/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="1_d32sa"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_k3m6b"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://blbdayuaapfr1" path="res://Assets/Mr. Breakfast's Free Prompts/png/shift_light.png" id="29_7npts"]
 [ext_resource type="Texture2D" uid="uid://hxn16qmt10qt" path="res://Assets/Mr. Breakfast's Free Prompts/png/space_light.png" id="30_4jc2o"]
 [ext_resource type="PackedScene" uid="uid://ugxxuoj6lygc" path="res://Scenes/spikepithitbox.tscn" id="30_vccsa"]
+[ext_resource type="PackedScene" uid="uid://y325umtus0h3" path="res://Scenes/dragonfly.tscn" id="32_s2h70"]
+[ext_resource type="PackedScene" uid="uid://c3nmojmdm2n43" path="res://Scenes/collisionwallupdown.tscn" id="33_i3wnr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccbj0"]
 texture = ExtResource("4_10uc1")
@@ -8587,9 +8589,6 @@ position = Vector2(744, -424)
 [node name="cannon3" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
 position = Vector2(824, -424)
 
-[node name="cannon8" parent="CannonsAndKey" instance=ExtResource("20_70iu3")]
-position = Vector2(896, -312)
-
 [node name="CheckpointGroup" type="Node" parent="."]
 
 [node name="Checkpoint" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
@@ -8600,9 +8599,6 @@ position = Vector2(424, -136)
 
 [node name="Checkpoint3" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
 position = Vector2(784, -136)
-
-[node name="Checkpoint6" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
-position = Vector2(808, -248)
 
 [node name="Checkpoint4" parent="CheckpointGroup" instance=ExtResource("23_m2ifs")]
 position = Vector2(456, -248)
@@ -8717,14 +8713,34 @@ position = Vector2(27, 12)
 scale = Vector2(0.333333, 0.390244)
 texture = ExtResource("29_7npts")
 
-[node name="Snail" parent="." instance=ExtResource("24_rnkex")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Snail" parent="Enemies" instance=ExtResource("24_rnkex")]
 position = Vector2(616, -255)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("25_duym4")]
-position = Vector2(496, -264)
+[node name="Dragonfly" parent="Enemies" instance=ExtResource("32_s2h70")]
+position = Vector2(1024, -256)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("25_duym4")]
-position = Vector2(736, -264)
+[node name="StaticBody2D" parent="Enemies" instance=ExtResource("33_i3wnr")]
+position = Vector2(1024, -157)
+
+[node name="StaticBody2D2" parent="Enemies" instance=ExtResource("33_i3wnr")]
+position = Vector2(1024, -325)
+
+[node name="Dragonfly3" parent="Enemies" instance=ExtResource("32_s2h70")]
+position = Vector2(536, -310)
+
+[node name="StaticBody2D9" parent="Enemies" instance=ExtResource("33_i3wnr")]
+position = Vector2(535, -236)
+
+[node name="StaticBody2D10" parent="Enemies" instance=ExtResource("33_i3wnr")]
+position = Vector2(535, -328)
+
+[node name="StaticBody2D7" parent="Enemies" instance=ExtResource("25_duym4")]
+position = Vector2(563, -262)
+
+[node name="StaticBody2D8" parent="Enemies" instance=ExtResource("25_duym4")]
+position = Vector2(842, -262)
 
 [connection signal="tree_entered" from="." to="CanvasLayer/HUD" method="_on_level_1_tree_entered"]
 [connection signal="tree_entered" from="CanvasLayer/HUD" to="." method="_on_hud_tree_entered"]

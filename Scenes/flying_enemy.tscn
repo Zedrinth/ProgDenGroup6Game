@@ -1,0 +1,140 @@
+[gd_scene load_steps=26 format=3 uid="uid://c1ptsqovswb2q"]
+
+[ext_resource type="Script" path="res://Scripts/flying_enemy.gd" id="1_28y54"]
+[ext_resource type="Texture2D" uid="uid://dtwf084ydp5h" path="res://Assets/Flying enemy/flying left directions1.png" id="2_ev2hg"]
+[ext_resource type="Texture2D" uid="uid://c2prju4a1xfs5" path="res://Assets/Flying enemy/Bug idle1.png" id="2_mi2mb"]
+[ext_resource type="Texture2D" uid="uid://dtl8o5nl4vyes" path="res://Assets/Flying enemy/flying left directions2.png" id="3_bqall"]
+[ext_resource type="Texture2D" uid="uid://dpwka5jjkichr" path="res://Assets/Flying enemy/Bug idle2.png" id="3_cfa1p"]
+[ext_resource type="Texture2D" uid="uid://3kghetoos2ox" path="res://Assets/Flying enemy/flying left directions3.png" id="4_767nq"]
+[ext_resource type="Texture2D" uid="uid://bkixk7bh5ff6" path="res://Assets/Flying enemy/Bug idle3.png" id="4_wa1bt"]
+[ext_resource type="Texture2D" uid="uid://b3ubhnh24sw73" path="res://Assets/Flying enemy/flying left directions4.png" id="5_twpqa"]
+[ext_resource type="Texture2D" uid="uid://b12ov6yjbsm75" path="res://Assets/Flying enemy/Bug idle4.png" id="5_uac3w"]
+[ext_resource type="Texture2D" uid="uid://b1kss3em3okuj" path="res://Assets/Flying enemy/flying left directions5.png" id="6_266v2"]
+[ext_resource type="Texture2D" uid="uid://b6v3lvq86uap5" path="res://Assets/Flying enemy/Bug idle5.png" id="6_uj0gy"]
+[ext_resource type="Texture2D" uid="uid://84q6ppwtee46" path="res://Assets/Flying enemy/flying right directions1.png" id="7_mey78"]
+[ext_resource type="Texture2D" uid="uid://rhmp5kltglkx" path="res://Assets/Flying enemy/Bug idle6.png" id="7_ndiq1"]
+[ext_resource type="Texture2D" uid="uid://bl8d7efd5wgr5" path="res://Assets/Flying enemy/Bug idle7.png" id="8_ipprd"]
+[ext_resource type="Texture2D" uid="uid://ddfcowf7wq2n" path="res://Assets/Flying enemy/flying right directions2.png" id="8_tnrp0"]
+[ext_resource type="Texture2D" uid="uid://4ir4pwmxn24i" path="res://Assets/Flying enemy/flying right directions3.png" id="9_58b4m"]
+[ext_resource type="Texture2D" uid="uid://6nm6gj7mpmgh" path="res://Assets/Flying enemy/Bug idle8.png" id="9_idper"]
+[ext_resource type="Texture2D" uid="uid://dqd4ypi1dbpgi" path="res://Assets/Flying enemy/flying right directions4.png" id="10_0edgt"]
+[ext_resource type="Texture2D" uid="uid://bjqdj8dls73la" path="res://Assets/Flying enemy/Bug idle9.png" id="10_k8bxo"]
+[ext_resource type="Texture2D" uid="uid://rtnwowhxe8ae" path="res://Assets/Flying enemy/flying right directions5.png" id="11_kb055"]
+[ext_resource type="Texture2D" uid="uid://bs87qnpr7knqd" path="res://Assets/Flying enemy/Bug idle10.png" id="11_xmk87"]
+[ext_resource type="Texture2D" uid="uid://ru4mu15lp25o" path="res://Assets/Flying enemy/Bug idle11.png" id="12_8ytq5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4srg4"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mi2mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cfa1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wa1bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uac3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uj0gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ndiq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ipprd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_idper")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k8bxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xmk87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8ytq5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ev2hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bqall")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_767nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_twpqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_266v2")
+}],
+"loop": true,
+"name": &"Left direction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mey78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tnrp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_58b4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0edgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kb055")
+}],
+"loop": true,
+"name": &"Right direction",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cic0w"]
+radius = 37.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smda8"]
+radius = 7.0
+
+[node name="Flying enemy" type="CharacterBody2D"]
+script = ExtResource("1_28y54")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(1.02941, 1)
+sprite_frames = SubResource("SpriteFrames_4srg4")
+animation = &"Left direction"
+offset = Vector2(0, -6)
+
+[node name="detection_area" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/detection_area"]
+position = Vector2(0.485715, 0)
+shape = SubResource("CircleShape2D_cic0w")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0.485715, 0)
+scale = Vector2(0.97143, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_smda8")
+
+[connection signal="body_entered" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_exited"]
