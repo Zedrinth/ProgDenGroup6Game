@@ -4,7 +4,7 @@ class_name Player
 
 
 const SPEED = 150.0
-const JUMP_VELOCITY = 255
+const JUMP_VELOCITY = 265
 const GRAVITY = 700
 @export var Cayote_Time: float = 0.1
 var Jump_Available: bool = true
@@ -31,7 +31,7 @@ func take_damage():
 	if can_take_damage: 
 		iframes()
 		#GameManager.hitstop()
-		Global.current_health -= 0
+		Global.current_health -= 1
 		sfx_hit.play()
 		knockback()
 		Global.hit.emit()
@@ -71,9 +71,10 @@ func _physics_process(delta):
 			dash_animation.emitting = false
 		if is_on_floor():
 			$AnimatedSprite2D.play("Walking")
+			
 	else:
 		velocity.x = 0
-		if is_on_floor:
+		if is_on_floor && !dashing:
 			$AnimatedSprite2D.play("Idle")
 	
 	
@@ -101,7 +102,7 @@ func _physics_process(delta):
 
 
 # Find yourself bouncing when hitting enemies or obstacles? It's not a bug, its a feature! Use it to save seconds for your speedrun!
-func knockback():
+func knockback(): 
 	var direction = Input.get_axis("moveLeft", "moveRight")
 	if !dashing:
 		var knockbackDirection = direction + -velocity.x * KnockbackPower
@@ -126,7 +127,7 @@ func _on_dash_again_timer_timeout() -> void:
 func game_over():
 	Global.previous_screen = get_tree().current_scene.scene_file_path
 	print(Global.previous_screen)
-	#ignore error on line 42. Since it changes to another scene anyway, making the error null
+	# It keeps giving an error but it works perfectly so do not touch :)
 	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	print("game over")
 	print("current_health ",Global.current_health)

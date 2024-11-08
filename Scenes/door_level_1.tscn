@@ -103,6 +103,8 @@ light_mask = 0
 shape = SubResource("RectangleShape2D_2jup2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.19412, 0)
+scale = Vector2(0.783403, 1)
 sprite_frames = SubResource("SpriteFrames_amdu7")
 animation = &"Locked"
 autoplay = "Locked"
@@ -110,7 +112,7 @@ autoplay = "Locked"
 [node name="nearDoor" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nearDoor"]
-position = Vector2(-2.5, -0.5)
+position = Vector2(0, 2.98023e-08)
 shape = SubResource("RectangleShape2D_e5n0b")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
