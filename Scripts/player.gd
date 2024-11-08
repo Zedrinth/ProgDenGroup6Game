@@ -16,10 +16,11 @@ var can_dash = true
 @onready var sfx_hit: AudioStreamPlayer2D = $SFx_Hit
 var current_health: int = 3
 var can_take_damage = true
-@export var KnockbackPower: int = 500
+@export var KnockbackPower: int = 5
 @onready var dash_animation: GPUParticles2D = $Dash_Animation
 signal animation_finished
 var n : int = 1
+
 
 func _ready():
 	Global.keys = 0
@@ -27,10 +28,10 @@ func _ready():
 	GameManager.player = self
 
 func take_damage():
-	if can_take_damage:
+	if can_take_damage: 
 		iframes()
 		#GameManager.hitstop()
-		Global.current_health -= 1
+		Global.current_health -= 0
 		sfx_hit.play()
 		knockback()
 		Global.hit.emit()
@@ -76,7 +77,6 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Idle")
 	
 	
-	
 	#Rotation So I dont have to manualy edit the SPIRTE!!!
 	if direction != 0:
 		$AnimatedSprite2D.flip_h = direction < 0
@@ -100,11 +100,19 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-# Find yourself bouncing when hitting enemies? It's not a bug, its a feature! Use it to save seconds for your speedrun!
-func knockback():	
-	var knockbackDirection = -velocity.normalized() * KnockbackPower
-	velocity = knockbackDirection
-	move_and_slide()
+# Find yourself bouncing when hitting enemies or obstacles? It's not a bug, its a feature! Use it to save seconds for your speedrun!
+func knockback():
+	var direction = Input.get_axis("moveLeft", "moveRight")
+	if !dashing:
+		var knockbackDirection = direction + -velocity.x * KnockbackPower
+		velocity.x = knockbackDirection
+		velocity.y = 0
+		move_and_slide()
+	else:
+		var knockbackDirection = direction + -velocity.x * 2
+		velocity.x = knockbackDirection
+		velocity.y = 0
+		move_and_slide()
 
 func Cayote_Timeout():
 	Jump_Available = false

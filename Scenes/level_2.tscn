@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://c8a3tmhksh4ax"]
+[gd_scene load_steps=48 format=4 uid="uid://c8a3tmhksh4ax"]
 
 [ext_resource type="Texture2D" uid="uid://lsppfqtp2gaa" path="res://Assets/Legacy Collection/Environments/lava-background/PNG/lava-background-preview.png" id="1_3l5wu"]
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_3ox78"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://detj4eo1yviu0" path="res://Scenes/key.tscn" id="19_hofrs"]
 [ext_resource type="PackedScene" uid="uid://bx2dit36pbltd" path="res://Scenes/hitbox6.tscn" id="21_2rjan"]
 [ext_resource type="PackedScene" uid="uid://ccvrw5brcyvgh" path="res://Scenes/spikes4usd.tscn" id="22_b1fy3"]
+[ext_resource type="Script" path="res://Scripts/hitbox_hurt.gd" id="23_ggw4l"]
 [ext_resource type="PackedScene" uid="uid://b08wic0wrtavk" path="res://Scenes/checkpoint.tscn" id="23_jdfi5"]
 [ext_resource type="PackedScene" uid="uid://6uf5uorkxlsf" path="res://Scenes/spikesbigend.tscn" id="23_q6ic3"]
 [ext_resource type="PackedScene" uid="uid://bvucbil3g3kve" path="res://Scenes/normalcanon.tscn" id="24_gt6aj"]
@@ -6891,33 +6892,43 @@ position = Vector2(92, -80)
 
 [node name="Spikes5" parent="HitboxGroup" instance=ExtResource("28_juqhp")]
 position = Vector2(1336, 168)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes6" parent="HitboxGroup" instance=ExtResource("28_juqhp")]
 position = Vector2(1176, 168)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes7" parent="HitboxGroup" instance=ExtResource("28_juqhp")]
 position = Vector2(1080, 168)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes8" parent="HitboxGroup" instance=ExtResource("28_juqhp")]
 position = Vector2(1080, 168)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes9" parent="HitboxGroup" instance=ExtResource("28_juqhp")]
 position = Vector2(1496, 168)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes4USD" parent="HitboxGroup" instance=ExtResource("22_b1fy3")]
 position = Vector2(1256, 120)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes4USD2" parent="HitboxGroup" instance=ExtResource("22_b1fy3")]
 position = Vector2(1416, 120)
+script = ExtResource("23_ggw4l")
 
 [node name="Spikes4USD3" parent="HitboxGroup" instance=ExtResource("22_b1fy3")]
 position = Vector2(1000, 121)
+script = ExtResource("23_ggw4l")
 
 [node name="SpikesBigEnd" parent="HitboxGroup" instance=ExtResource("23_q6ic3")]
 position = Vector2(1528, 232)
+script = ExtResource("23_ggw4l")
 
 [node name="SpikePitHitbox" parent="HitboxGroup" instance=ExtResource("25_wi18e")]
 position = Vector2(776, 128)
+script = ExtResource("23_ggw4l")
 
 [node name="DownCannonGroup" type="Node" parent="."]
 
